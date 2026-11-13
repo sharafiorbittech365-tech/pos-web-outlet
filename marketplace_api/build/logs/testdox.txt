@@ -1,0 +1,10 @@
+Health
+ [x] Is defined app path
+ [x] Base url has been set
+
+Stateless Parts (Tests\Unit\StatelessParts)
+ [x] Buyer token round trip and tampering
+ [x] Cart is cleaned
+ [x] Location is cleaned
+ [x] Checkout tokens and references
+

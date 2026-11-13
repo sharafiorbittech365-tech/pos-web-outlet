@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CLI Arguments" tests="6" assertions="23" errors="0" failures="0" skipped="0" time="0.203207">
+    <testsuite name="HealthTest" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\HealthTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.152150">
+      <testcase name="testIsDefinedAppPath" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\HealthTest.php" line="12" class="HealthTest" classname="HealthTest" assertions="1" time="0.102906"/>
+      <testcase name="testBaseUrlHasBeenSet" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\HealthTest.php" line="17" class="HealthTest" classname="HealthTest" assertions="2" time="0.049244"/>
+    </testsuite>
+    <testsuite name="Tests\Unit\StatelessPartsTest" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\StatelessPartsTest.php" tests="4" assertions="20" errors="0" failures="0" skipped="0" time="0.051057">
+      <testcase name="testBuyerTokenRoundTripAndTampering" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\StatelessPartsTest.php" line="21" class="Tests\Unit\StatelessPartsTest" classname="Tests.Unit.StatelessPartsTest" assertions="7" time="0.007493"/>
+      <testcase name="testCartIsCleaned" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\StatelessPartsTest.php" line="37" class="Tests\Unit\StatelessPartsTest" classname="Tests.Unit.StatelessPartsTest" assertions="4" time="0.019090"/>
+      <testcase name="testLocationIsCleaned" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\StatelessPartsTest.php" line="56" class="Tests\Unit\StatelessPartsTest" classname="Tests.Unit.StatelessPartsTest" assertions="3" time="0.005556"/>
+      <testcase name="testCheckoutTokensAndReferences" file="F:\My Project\POS\Application\apps\marketplace_api\tests\unit\StatelessPartsTest.php" line="66" class="Tests\Unit\StatelessPartsTest" classname="Tests.Unit.StatelessPartsTest" assertions="6" time="0.018918"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

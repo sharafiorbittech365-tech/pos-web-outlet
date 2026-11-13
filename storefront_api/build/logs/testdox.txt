@@ -1,0 +1,76 @@
+Auth (Tests\Feature\Auth)
+ [x] Missing key is 401
+ [x] Wrong key is 401
+ [x] Unknown storefront host is 404
+ [x] Gateway token from super admin replaces the env token
+ [x] Gateway token acts as the sites storefront key
+ [x] Suspended subscription is 402
+ [x] Trial subscription works
+ [x] Module disabled is 403
+ [x] Missing scope is 403
+ [x] Publishable key origin check
+ [x] Unpublished site is 403
+ [x] Preflight is answered without key
+ [x] Unknown route is json 404
+ [x] Health
+
+Booking (Tests\Feature\Booking)
+ [x] Slots
+ [x] Slot clash is 409
+ [x] Validation and idempotency
+ [x] Bookings module required
+
+Catalog (Tests\Feature\Catalog)
+ [x] List paginates and hides offline and deleted products
+ [x] Price is what the customer pays
+ [x] Filters and sort
+ [x] Detail and not found
+ [x] Etag and cache control
+ [x] Inventory
+
+Clinic Booking (Tests\Feature\ClinicBooking)
+ [x] Doctors and slots
+ [x] Booking is checked on the server
+ [x] Idempotent and rate limited
+
+Health
+ [x] Is defined app path
+ [x] Base url has been set
+
+Location (Tests\Feature\Location)
+ [x] Catalogue endpoints are public and cached
+ [x] Order stores the checked address and pin
+ [x] Bad relations are refused
+ [x] Bad coordinates are refused
+
+Module Filter (Tests\Feature\ModuleFilter)
+ [x] Inventory endpoint needs the inventory module
+
+Order (Tests\Feature\Order)
+ [x] Create order takes stock and matches calculator
+ [x] Free delivery above and pickup
+ [x] Bkash records payment
+ [x] Validation
+ [x] Out of stock is 409 and nothing is written
+ [x] Idempotent replay
+ [x] Integrator order list and detail
+
+Self Hosted (Tests\Feature\SelfHosted)
+ [x] Client on its verified domain gets its own store
+ [x] Stored secret is only a hash
+ [x] Wrong secret or unknown client is 401
+ [x] Host is required with client id
+ [x] Unverified disabled or blocked domain is refused
+ [x] Client cannot use another shops domain or data
+ [x] Revoked paused and rotated clients
+ [x] Client respects subscription and module
+ [x] Exact origin cors
+ [x] Browser calls get only their exact origin echoed
+ [x] Secret keys are refused from browsers
+ [x] Gateway refuses disabled custom domain
+
+Table Order (Tests\Feature\TableOrder)
+ [x] Table lookup only for the shops own tables
+ [x] Table order is an open dine in bill on that table
+ [x] Bad table code is refused
+

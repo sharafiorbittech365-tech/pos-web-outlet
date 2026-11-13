@@ -1,0 +1,155 @@
+/*
+ * Compact design layer for every back-office page (the .app shell: dashboard, products, inventory, orders, customers,
+ * reports, settings, website …). Loaded after app.css / pos.css. It only changes sizes and spacing — colours still come
+ * from the theme variables, so dark mode and the shop's brand colour keep working.
+ *   - desktop (>= 901px): compact density
+ *   - tablet: icon rail (existing) + the same compact controls
+ *   - phone app-mode (html.app-mode) and the till are NOT touched: they keep their touch-sized layout
+ */
+html:not(.app-mode) .app {
+  --c-h: 34px;          /* control height */
+  --c-h-sm: 28px;
+  --c-r: 9px;           /* control radius */
+  --c-card-r: 12px;
+  --c-gap: 12px;
+  --c-pad: 14px;
+  font-size: 13px;
+}
+
+/* ---- type scale ---- */
+html:not(.app-mode) .app h2 { font-size: 18px; letter-spacing: -.015em; }
+html:not(.app-mode) .app h3 { font-size: 14.5px; }
+html:not(.app-mode) .app h4 { font-size: 13px; }
+html:not(.app-mode) .app small { font-size: 11.5px; }
+html:not(.app-mode) .app .page-sub { font-size: 12.5px; margin-top: 1px; }
+
+/* ---- controls ---- */
+html:not(.app-mode) .app .input,
+html:not(.app-mode) .app .select,
+html:not(.app-mode) .app textarea.input { height: var(--c-h); padding: 0 10px; border-radius: var(--c-r); font-size: 13px; }
+html:not(.app-mode) .app .select { padding-right: 28px; }
+html:not(.app-mode) .app textarea.input { height: auto; min-height: 62px; padding: 7px 10px; }
+html:not(.app-mode) .app .input:focus, html:not(.app-mode) .app .select:focus { box-shadow: 0 0 0 3px var(--primary-soft); }
+html:not(.app-mode) .app .btn { height: var(--c-h); padding: 0 12px; gap: 6px; border-radius: var(--c-r); font-size: 13px; }
+html:not(.app-mode) .app .btn.sm { height: var(--c-h-sm); padding: 0 10px; font-size: 12.5px; }
+html:not(.app-mode) .app .btn.primary { box-shadow: none; }
+html:not(.app-mode) .app .btn.xl { height: 44px; font-size: 15px; }
+html:not(.app-mode) .app .icon-btn { width: 32px; height: 32px; border-radius: var(--c-r); }
+html:not(.app-mode) .app .ic { width: 16px; height: 16px; }
+html:not(.app-mode) .app .ic.sm { width: 14px; height: 14px; }
+html:not(.app-mode) .app .ic.lg { width: 20px; height: 20px; }
+html:not(.app-mode) .app label.field { gap: 4px; font-size: 11.5px; }
+html:not(.app-mode) .app .check { gap: 6px; }
+html:not(.app-mode) .app .check input { width: 15px; height: 15px; }
+html:not(.app-mode) .app .chip { height: 30px; padding: 0 11px; font-size: 12.5px; box-shadow: none; }
+html:not(.app-mode) .app .chip.sm { height: 26px; padding: 0 9px; font-size: 12px; }
+html:not(.app-mode) .app .chip.on { box-shadow: none; }
+html:not(.app-mode) .app .seg { padding: 2px; gap: 2px; border-radius: 11px; }
+html:not(.app-mode) .app .seg button { height: 28px; padding: 0 11px; font-size: 12.5px; border-radius: 9px; }
+html:not(.app-mode) .app .tag { height: 20px; padding: 0 8px; font-size: 11px; }
+html:not(.app-mode) .app .search { height: var(--c-h); border-radius: var(--c-r); }
+html:not(.app-mode) .app .search input { font-size: 13px; }
+
+/* ---- shell: sidebar, top bar ---- */
+@media (min-width: 1280px) {
+  html:not(.app-mode) .app:not(.pos-mode):not(.app-shell) { grid-template-columns: 208px minmax(0, 1fr); }
+}
+html:not(.app-mode) .app .sidebar { padding: 10px 8px; gap: 1px; }
+html:not(.app-mode) .app .brand { padding: 0 6px 10px; gap: 8px; }
+html:not(.app-mode) .app .brand-mark { width: 28px; height: 28px; border-radius: 8px; font-size: 13px; }
+html:not(.app-mode) .app .brand-name { font-size: 15px; }
+html:not(.app-mode) .app .biz-card { padding: 7px 8px; gap: 8px; margin-bottom: 6px; border-radius: 10px; }
+html:not(.app-mode) .app .biz-logo { width: 30px; height: 30px; border-radius: 8px; font-size: 16px; }
+html:not(.app-mode) .app .biz-card b { font-size: 12.5px; }
+html:not(.app-mode) .app .sb-label { padding: 10px 8px 3px; font-size: 10px; }
+html:not(.app-mode) .app .sb-link { height: 33px; padding: 0 10px; gap: 10px; font-size: 13px; border-radius: 8px; }
+html:not(.app-mode) .app .sb-link .count { height: 18px; min-width: 18px; font-size: 10.5px; }
+html:not(.app-mode) .app .sb-foot { padding-top: 8px; gap: 6px; }
+html:not(.app-mode) .app .sb-user { padding: 6px; gap: 8px; border-radius: 10px; }
+html:not(.app-mode) .app .topbar { height: 50px; padding: 0 16px; gap: 8px; }
+html:not(.app-mode) .app .topbar .tb-title { font-size: 15px; }
+html:not(.app-mode) .app .clock { font-size: 11px; }
+html:not(.app-mode) .app .clock b { font-size: 12.5px; }
+html:not(.app-mode) .app .tb-quick { margin-right: 2px; }
+html:not(.app-mode) .app .sbanners { padding: 8px 16px 0; }
+html:not(.app-mode) .app .sbanner { padding: 7px 12px; border-radius: 10px; font-size: 12.5px; }
+
+/* ---- page frame ---- */
+html:not(.app-mode) .app .page { padding: var(--c-pad) 16px 20px; gap: var(--c-gap); max-width: 1640px; }
+html:not(.app-mode) .app .page-h { gap: 8px; }
+html:not(.app-mode) .app .page-h h2 { margin-right: 4px; }
+
+/* ---- cards, stats ---- */
+html:not(.app-mode) .app .card, html:not(.app-mode) .app .stat, html:not(.app-mode) .app .kpi { border-radius: var(--c-card-r); box-shadow: none; border-color: var(--line); }
+html:not(.app-mode) .app .card-h { padding: 9px var(--c-pad); }
+html:not(.app-mode) .app .card-h h3 { font-size: 14px; }
+html:not(.app-mode) .app .card-b { padding: 12px var(--c-pad); }
+html:not(.app-mode) .app .stats, html:not(.app-mode) .app .kpis { gap: 10px; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); }
+html:not(.app-mode) .app .stat, html:not(.app-mode) .app .kpi { padding: 10px 14px; gap: 2px; }
+html:not(.app-mode) .app .stat:hover { box-shadow: none; }
+html:not(.app-mode) .app .stat > .ic, html:not(.app-mode) .app .kpi-ic { width: 30px; height: 30px; padding: 7px; border-radius: 9px; margin-bottom: 2px; }
+html:not(.app-mode) .app .stat small, html:not(.app-mode) .app .kpi small { font-size: 11.5px; }
+html:not(.app-mode) .app .stat b, html:not(.app-mode) .app .kpi b { font-size: 20px; }
+html:not(.app-mode) .app .kpi-sub { font-size: 11.5px; }
+
+/* ---- tables ---- */
+html:not(.app-mode) .app .tbl { font-size: 12.5px; }
+html:not(.app-mode) .app .tbl th { padding: 7px 12px; font-size: 10.5px; }
+html:not(.app-mode) .app .tbl td { padding: 7px 12px; }
+html:not(.app-mode) .app .dt-tbl.compact td, html:not(.app-mode) .app .dt-tbl.compact th { padding-top: 5px; padding-bottom: 5px; }
+html:not(.app-mode) .app .dt-bar { padding: 8px var(--c-pad); gap: 6px; }
+html:not(.app-mode) .app .dt-bar .search { min-width: 200px; flex: 0 1 300px; }
+html:not(.app-mode) .app .dt-foot { padding: 7px var(--c-pad); gap: 6px 12px; font-size: 12px; }
+html:not(.app-mode) .app .dt-pager button { min-width: 28px; height: 28px; font-size: 12px; border-radius: 7px; }
+html:not(.app-mode) .app .dt-per select { height: 26px; }
+html:not(.app-mode) .app .dt-empty td { padding: 18px 12px !important; }
+html:not(.app-mode) .app .empty { padding: 28px 16px; gap: 6px; }
+
+/* ---- forms ---- */
+html:not(.app-mode) .app .form-grid { gap: 10px; }
+@media (min-width: 1100px) {
+  /* roomy cards get as many columns as fit; modals and narrow cards stay 1-2 columns */
+  html:not(.app-mode) .app .card-b > .form-grid, html:not(.app-mode) .app .pf-body .form-grid { grid-template-columns: repeat(auto-fill, minmax(230px, 1fr)); }
+}
+html:not(.app-mode) .app .row-add { gap: 6px; }
+html:not(.app-mode) .app .tabs { padding: 0 14px; }
+html:not(.app-mode) .app .tabs button { height: 36px; padding: 0 10px; font-size: 12.5px; }
+html:not(.app-mode) .app .pf-h { padding: 9px var(--c-pad); font-size: 14px; }
+html:not(.app-mode) .app .pf-card { margin-bottom: 10px; border-radius: var(--c-card-r); }
+html:not(.app-mode) .app .pf-body { padding: 0 var(--c-pad) var(--c-pad); gap: 10px; }
+html:not(.app-mode) .app .pf-sub > summary { padding: 8px 36px 8px 12px; font-size: 13px; }
+
+/* ---- dialogs, popovers ---- */
+html:not(.app-mode) .modal, html:not(.app-mode) .modal-dlg { border-radius: 14px; }
+html:not(.app-mode) .modal-h { padding: 11px 16px; }
+html:not(.app-mode) .modal-b { padding: 14px 16px; gap: 10px; }
+html:not(.app-mode) .modal-f { padding: 10px 16px; }
+
+/* ---- tablet: keep the same compact controls, a little more breathing room on the page ---- */
+@media (max-width: 1279px) and (min-width: 901px) {
+  html:not(.app-mode) .app .page { padding: 12px 14px 18px; }
+}
+/* ---- small screens that are not in phone app-mode (narrow desktop windows): touch-friendly controls ---- */
+@media (max-width: 900px) {
+  html:not(.app-mode) .app { --c-h: 38px; --c-h-sm: 32px; }
+  html:not(.app-mode) .app .page { padding: 12px; }
+  html:not(.app-mode) .app .card-b { padding: 12px; }
+  html:not(.app-mode) .app .tb-quick span { display: none; }
+  html:not(.app-mode) .app .tb-quick:not(.primary) { display: none; }
+}
+
+/* ---- Website › Pages: list + editor (one column on small screens) ---- */
+.wpg { display: grid; grid-template-columns: minmax(0, 320px) minmax(0, 1fr); gap: 14px; align-items: start; }
+@media (max-width: 900px) { .wpg { grid-template-columns: minmax(0, 1fr); } }
+
+/* ---- tablet icon rail: the user card shows only the avatar (it was clipped) ---- */
+@media (max-width: 1279px) {
+  .app .sidebar { overflow-x: hidden; }
+  .app .sb-user { justify-content: center; padding: 6px 0; background: transparent; }
+  .app .sb-user .grow, .app .sb-user .sb-lock { display: none; }
+}
+/* ---- Website › Pages: the page list ---- */
+.wpage { display: block; padding: 10px 12px; border: 1px solid var(--line); border-radius: 10px; color: inherit; text-decoration: none; background: var(--surface); }
+.wpage:hover { border-color: var(--primary); }
+.wpage b { display: block; color: var(--text); font-size: 13.5px; }
+.wpage > div { font-size: 11.5px; color: var(--muted); margin-top: 2px; word-break: break-all; }

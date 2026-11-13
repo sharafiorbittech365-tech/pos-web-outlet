@@ -1,0 +1,36 @@
+Auth
+ [x] Pages need a signed in staff member
+
+Business Types
+ [x] Pages load
+
+Locations
+ [x] Pages and enable disable
+ [x] Only platform settings staff can manage locations
+
+Medicines
+ [x] Super admin pages import and toggle
+
+Module Rules Admin
+ [x] System health page
+
+Pages
+ [x] Every page loads
+ [x] Invoice print view shows the invoice
+ [x] Plan crud and price list
+ [x] Settings and announcement
+
+Pricing
+ [x] Pricing page lists the seeded price list
+ [x] Changing the base price changes the bill
+ [x] Customer discount package and price override
+ [x] Outlet discount rules are editable
+ [x] Package create and assign
+ [x] Brand form validates the domain
+
+Rbac
+ [x] Sales cannot open restricted pages
+
+Servers
+ [x] Server pages render
+

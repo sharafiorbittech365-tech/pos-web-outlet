@@ -1,0 +1,82 @@
+/* Subscription › Modules & features (selection with a live price) */
+.msel-grid { display: grid; grid-template-columns: minmax(0, 1fr) 320px; gap: 16px; align-items: start; }
+.msel-sum { position: sticky; top: 12px; }
+.msel-feats { display: grid; gap: 4px; margin-top: 8px; }
+.msel-feats .check { font-size: 13px; }
+.msel-delta { margin: 10px 0; padding: 10px 12px; border-radius: var(--radius); background: var(--surface-2, var(--bg)); border: 1px solid var(--line); font-size: 13px; display: grid; gap: 4px; }
+.msel-delta b { font-size: 15px; }
+.msel .ms-r { display: grid; justify-items: end; gap: 6px; }
+.switch { position: relative; display: inline-block; width: 40px; height: 22px; cursor: pointer; }
+.switch input { position: absolute; opacity: 0; width: 100%; height: 100%; margin: 0; cursor: pointer; }
+.switch span { position: absolute; inset: 0; border-radius: 999px; background: var(--line); transition: background .15s; }
+.switch span::after { content: ""; position: absolute; top: 3px; left: 3px; width: 16px; height: 16px; border-radius: 50%; background: #fff; transition: transform .15s; box-shadow: 0 1px 2px rgba(0, 0, 0, .25); }
+.switch input:checked + span { background: var(--primary); }
+.switch input:checked + span::after { transform: translateX(18px); }
+.switch input:focus-visible + span { outline: 2px solid var(--primary); outline-offset: 2px; }
+@media (max-width: 900px) { .msel-grid { grid-template-columns: 1fr; } .msel-sum { position: static; } }
+html.app-mode .msel-grid { grid-template-columns: 1fr; }
+.msel-grid > *, .msel-feats .check { min-width: 0; }
+.msel-feats .check { overflow-wrap: anywhere; }
+@media (max-width: 700px) { .msel-grid { grid-template-columns: minmax(0, 1fr); } }
+.mod-shop, .mshop { min-width: 0; max-width: 100%; box-sizing: border-box; }
+.mshop > * { min-width: 0; }
+
+/* category headings in the module shop, outlet what-if input */
+.mod-cat { margin: 1.1rem 0 .4rem; font-size: .8rem; font-weight: 700; letter-spacing: .04em; text-transform: uppercase; color: var(--muted, #667); }
+.mod-shop > .mod-cat:first-child { margin-top: 0; }
+.msel-outlets { margin-bottom: .75rem; }
+.msel-outlets .input { max-width: 8rem; }
+
+/* redesign: calm, grouped Subscription page ------------------------------------------------ */
+/* nothing inside the page scrolls on its own except the summary column (the price lines used to stick too) */
+.bill-sum { position: static; }
+.sub-top { align-items: start; gap: 12px; }
+.sub-cur .card-b { gap: 12px; }
+.sub-plan h3 { font-size: 19px; }
+.sub-badge { width: 42px; height: 42px; border-radius: 13px; }
+.sub-facts { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 8px; }
+.sub-facts > div { padding: 8px 10px; border-radius: 10px; }
+.bill-sum .bs-r { padding: 6px 0; font-size: 13.5px; border-bottom: 1px dashed var(--line); }
+.bill-sum .bs-r.tot { border-bottom: 0; border-top: 2px solid var(--text); margin-top: 4px; padding-top: 10px; font-size: 16px; }
+.bill-sum .bs-r:last-child { border-bottom: 0; }
+
+/* billing cycle toggle */
+.row-add .seg { flex-wrap: wrap; }
+.seg label { display: inline-flex; align-items: center; height: 32px; padding: 0 14px; border-radius: 9px; font-weight: 600; font-size: 13px; color: var(--muted); cursor: pointer; white-space: nowrap; }
+.seg label.on, .seg label:has(input:checked) { background: var(--surface); color: var(--primary); box-shadow: var(--shadow); }
+.seg label:not(:has(input:checked)).on { background: transparent; color: var(--muted); box-shadow: none; }
+
+/* module shop: one card per category, tidy rows inside */
+.msel .mod-shop { display: grid; grid-template-columns: minmax(0, 1fr); gap: 14px; }
+.mgroup { background: var(--surface); border: 1px solid var(--line); border-radius: 14px; overflow: hidden; }
+.mgroup .mod-cat { display: flex; align-items: center; gap: 8px; margin: 0; padding: 10px 14px; font-size: 12px; background: var(--surface-2, var(--bg)); border-bottom: 1px solid var(--line); }
+.mgroup .mod-cat small { text-transform: none; letter-spacing: 0; font-weight: 600; padding: 0 7px; border-radius: 99px; background: var(--surface-3, var(--line)); }
+.mlist { display: grid; grid-template-columns: repeat(auto-fill, minmax(340px, 1fr)); gap: 0; }
+.mlist .mshop { border: 0; border-bottom: 1px solid var(--line); border-radius: 0; box-shadow: none; padding: 12px 14px; gap: 10px; background: transparent; align-items: flex-start; }
+.mlist .mshop:last-child { border-bottom: 0; }
+.mlist .mshop.on { background: var(--primary-soft); box-shadow: none; }
+.mlist .mshop.inc { background: color-mix(in srgb, var(--ok) 5%, transparent); }
+.mlist .mshop .ms-ic { width: 34px; height: 34px; border-radius: 10px; }
+.mlist .mshop b { font-size: 13.5px; }
+.mlist .mshop small { font-size: 12px; }
+.mlist .mshop .tag { margin-left: 4px; vertical-align: 1px; }
+.mlist .mshop .ms-r { min-width: 74px; }
+@media (min-width: 1100px) { .mlist .mshop { border-right: 1px solid var(--line); } .mlist .mshop:nth-child(even) { border-right: 0; } }
+
+/* summary column: the only sticky element, kept inside the view */
+.msel-sum { top: 8px; align-self: start; max-height: calc(100vh - 80px); overflow: auto; }
+
+/* docked price bar (phones & tablets: the summary card sits below the list) */
+.msel-bar { display: none; }
+@media (max-width: 900px) {
+  .msel-sum { position: static; max-height: none; }
+  .msel-bar { position: sticky; bottom: 0; z-index: 6; display: flex; align-items: center; gap: 12px; margin: 10px -2px 0; padding: 10px 12px; border-radius: 14px; background: var(--surface); border: 1px solid var(--line); box-shadow: 0 -4px 16px rgba(16, 24, 40, .12); }
+  .msel-bar > div { flex: 1; min-width: 0; }
+  .msel-bar small { display: block; color: var(--muted); font-size: 11px; }
+  .msel-bar b { font-size: 17px; }
+  .msel-bar .btn { height: 42px; }
+  .mlist { grid-template-columns: minmax(0, 1fr); }
+  .sub-facts { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .sub-top { grid-template-columns: minmax(0, 1fr); }
+}
+@media (max-width: 700px) { .mlist .mshop { flex-wrap: wrap; } .mlist .mshop .grow { flex: 1 1 60%; } .mlist .mshop .ms-r { grid-auto-flow: column; align-items: center; justify-items: end; min-width: 0; margin-left: auto; } }

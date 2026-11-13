@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+  Back-office modules (products, inventory, purchases, reports, users, setup, website, subscription …)
+  feature tests on their own database: vendor/bin/phpunit -c phpunit-posb.xml
+-->
+<phpunit
+    xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xsi:noNamespaceSchemaLocation="vendor/phpunit/phpunit/phpunit.xsd"
+    bootstrap="vendor/codeigniter4/framework/system/Test/bootstrap.php"
+    backupGlobals="false"
+    beStrictAboutOutputDuringTests="true"
+    colors="true"
+    columns="max"
+    failOnRisky="true"
+    failOnWarning="true"
+    cacheDirectory="build/.phpunit-posb.cache"
+>
+    <testsuites>
+        <testsuite name="PosB">
+            <directory>./tests/posb</directory>
+        </testsuite>
+    </testsuites>
+
+    <source>
+        <include>
+            <directory suffix=".php">./app/Modules</directory>
+        </include>
+    </source>
+
+    <php>
+        <server name="app.baseURL" value="http://example.com/"/>
+        <server name="CODEIGNITER_SCREAM_DEPRECATIONS" value="0"/>
+        <const name="HOMEPATH" value="./"/>
+        <const name="CONFIGPATH" value="./app/Config/"/>
+        <const name="PUBLICPATH" value="./public/"/>
+        <env name="database.tests.hostname" value="127.0.0.1" force="true"/>
+        <env name="database.tests.database" value="omnipos_test_posb" force="true"/>
+        <env name="database.tests.username" value="root" force="true"/>
+        <env name="database.tests.password" value="" force="true"/>
+        <env name="database.tests.DBDriver" value="MySQLi" force="true"/>
+        <env name="database.tests.DBPrefix" value="" force="true"/>
+        <env name="database.tests.charset" value="utf8mb4" force="true"/>
+        <env name="database.tests.DBCollat" value="utf8mb4_unicode_ci" force="true"/>
+        <env name="database.tests.numberNative" value="true" force="true"/>
+        <env name="omnipos.serverCode" value="pos-1" force="true"/>
+        <env name="cache.handler" value="dummy" force="true"/>
+    </php>
+</phpunit>

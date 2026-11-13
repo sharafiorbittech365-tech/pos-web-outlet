@@ -1,0 +1,10 @@
+/* POS › Website › Multi-outlet website */
+.msite-grid { display: grid; grid-template-columns: minmax(0, 3fr) minmax(0, 2fr); gap: 16px; align-items: start; }
+.msite .wl-dot.off { background: var(--warn, #F59E0B); box-shadow: 0 0 0 4px color-mix(in srgb, var(--warn, #F59E0B) 20%, transparent); }
+.msite .wl-url { display: flex; align-items: center; gap: 12px; flex-wrap: wrap; }
+.msite .env-block { background: var(--surface-2); border: 1px solid var(--line); border-radius: 10px; padding: 10px 12px; overflow-x: auto; font-size: 12.5px; margin: 10px 0; }
+.msite .new-secret { border: 1px dashed var(--warn, #F59E0B); border-radius: 12px; padding: 12px; margin-bottom: 14px; }
+.msite .row-add { display: flex; gap: 8px; flex-wrap: wrap; }
+.msite .msite-sort { width: 80px; text-align: right; }
+.msite .slug-in { min-width: 0; }
+@media (max-width: 900px) { .msite-grid { grid-template-columns: 1fr; } }

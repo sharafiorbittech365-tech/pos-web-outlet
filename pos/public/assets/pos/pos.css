@@ -1,0 +1,576 @@
+/* BizPilot360X POS server — small additions on top of app.css (the design build's stylesheet) for
+   markup that is a link / form / label here instead of a button. */
+
+/* segmented control & tabs as links */
+.seg a { height: 34px; padding: 0 14px; border-radius: var(--radius-sm); font-weight: 600; font-size: 13px; color: var(--muted); display: inline-flex; align-items: center; justify-content: center; gap: 6px; white-space: nowrap; text-decoration: none; }
+.seg a:hover { color: var(--text); }
+.seg a.on { background: var(--surface); color: var(--primary); box-shadow: var(--shadow); }
+.seg.full a { flex: 1; }
+.seg.sm a { height: 30px; padding: 0 9px; }
+.ws-card .seg.full { margin-bottom: 4px; }
+
+/* screen-reader only */
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+/* PIN lock: profiles are labels with a radio, the PIN can also be typed */
+label.lu { cursor: pointer; }
+.pin-input { text-align: center; letter-spacing: .5em; font-size: 20px; font-weight: 700; height: 46px; margin-bottom: 10px; }
+.login-pin .btn.full { margin-top: 10px; }
+
+/* till: links styled like the design's buttons */
+a.tbtn, a.ig-btn, a.bb-recent, a.qa, a.alert-row, a.ro-row, a.loc-btn { text-decoration: none; color: inherit; }
+a.tbtn { color: var(--c, var(--text)); }
+a.ig-btn { color: var(--primary); }
+a.bb-recent { display: inline-flex; align-items: center; gap: 8px; color: #fff; }
+.up-top form.inline { display: inline-flex; }
+.till-busy { cursor: progress; }
+.till-busy .bb-pay, .till-busy .modal .btn.primary { opacity: .6; pointer-events: none; }
+.upos .sbanners { margin: 0; }
+.ig-btn[title] { cursor: help; }
+.ig a.ig-btn { cursor: pointer; }
+
+/* receipt in the "payment complete" dialog */
+.modal .rc-wrap { display: block; background: var(--surface-3); overflow-y: auto; min-height: 0; }
+.modal .rc-wrap .receipt { width: 100%; max-width: 340px; margin: 0 auto; }
+.modal .modal-f { flex-wrap: wrap; }
+.receipt .ic.sym { width: 28px; height: 28px; }
+.a4 .a4-logo .ic.sym { width: 34px; height: 34px; }
+
+/* order page */
+.ord-grid { display: grid; grid-template-columns: minmax(0, 1fr) 340px; gap: 14px; align-items: start; }
+.ord-side { display: grid; gap: 14px; }
+.ord-side .card .tbl td, .ord-side .card .tbl th { padding: 8px 12px; }
+.doc-frame { background: var(--surface-3); padding: 16px; border-radius: 18px; overflow-x: auto; }
+.doc-frame .receipt { margin: 0 auto; max-width: 340px; }
+.ship-steps { display: flex; flex-wrap: wrap; gap: 6px; padding: 12px 14px; }
+.ship-steps .chip.done { background: var(--ok-soft); color: var(--ok); border-color: transparent; }
+.kv { display: grid; grid-template-columns: auto 1fr; gap: 6px 14px; padding: 12px 14px; font-size: 13.5px; }
+.kv dt { color: var(--muted); }
+.kv dd { margin: 0; font-weight: 600; text-align: right; }
+.filter-bar { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+.filter-bar .input, .filter-bar .select { height: 34px; width: auto; }
+.ret-qty { height: 34px; width: 96px; }
+@media (max-width: 1100px) { .ord-grid { grid-template-columns: minmax(0, 1fr); } }
+
+/* customer page */
+.dbk-page .dbk-top { display: grid; grid-template-columns: repeat(auto-fit, minmax(180px, 1fr)); gap: 12px; }
+
+/* kitchen board: checkbox items are real inputs */
+.kt-ck input { cursor: pointer; }
+.kds-live { display: inline-flex; align-items: center; gap: 6px; font-size: 12.5px; color: var(--muted); }
+.kds-live i { width: 8px; height: 8px; border-radius: 50%; background: var(--ok); display: inline-block; animation: kdsPulse 2s infinite; }
+@keyframes kdsPulse { 50% { opacity: .3; } }
+
+/* floor */
+a.seat { text-decoration: none; color: inherit; }
+
+/* register */
+.reg-open { max-width: 520px; }
+.diff-neg { color: var(--danger); }
+.diff-pos { color: var(--ok); }
+
+/* the design build uses <button>s for navigation; here they are links */
+a.sb-link, a.biz-card, a.sb-user, a.chip, a.btn, a.qa, a.opt, a.dbk-chip, a.seat, a.alert-row, a.ro-row, a.tbtn, a.icon-btn, .seg a { text-decoration: none; }
+a.biz-card, a.sb-user, a.opt, a.dbk-chip, a.ro-row, a.alert-row { color: inherit; }
+a.chip { color: var(--text); }
+a.chip.on { color: var(--primary-ink); }
+
+/* unread badges in the menu (assets/pos/badges.js) */
+.nav-n[hidden] { display: none !important; }
+.nav-n { font-style: normal; }
+.m-tabs .badge-n { top: 0; }
+
+/* Tables › Manage */
+.tbl-add { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 10px; align-items: end; }
+.tbl-rows { display: grid; }
+.tbl-row { display: flex; flex-wrap: wrap; align-items: end; gap: 10px 16px; padding: 12px 16px; border-top: 1px solid var(--line); }
+.tbl-row:target { background: var(--primary-soft); }
+.tbl-edit { flex: 1 1 520px; display: grid; grid-template-columns: repeat(auto-fit, minmax(110px, 1fr)); gap: 8px; align-items: end; margin: 0; }
+.tbl-edit .input { height: 38px; }
+.tbl-acts { display: flex; flex-wrap: wrap; gap: 6px; }
+
+/* Products › Print labels */
+.lbl-custom[hidden] { display: none !important; }
+.lbl-grid { display: grid; grid-template-columns: minmax(0, 1.2fr) minmax(320px, 1fr); gap: 16px; align-items: start; }
+.lbl-tools { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 14px; border-bottom: 1px solid var(--line); }
+.lbl-tools .search { flex: 1 1 220px; display: flex; align-items: center; gap: 8px; height: 38px; padding: 0 12px; border: 1px solid var(--line); border-radius: 10px; color: var(--muted); }
+.lbl-tools .search input { flex: 1; min-width: 0; border: 0; outline: 0; background: transparent; color: var(--text); }
+.lbl-list { max-height: 62vh; overflow-y: auto; }
+.lbl-item { display: flex; align-items: center; gap: 10px; padding: 8px 14px; border-bottom: 1px solid var(--line); }
+.lbl-item.on { background: color-mix(in srgb, var(--primary) 6%, var(--surface)); }
+.lbl-pick { flex: 1; min-width: 0; display: flex; align-items: center; gap: 10px; cursor: pointer; }
+.lbl-pick input { width: 18px; height: 18px; flex: none; accent-color: var(--primary); }
+.lbl-pick .grow { min-width: 0; }
+.lbl-pick small { display: block; color: var(--muted); font-size: 12px; margin-top: 2px; }
+.lbl-pick code { font-size: 11.5px; }
+.lbl-qty { width: 72px; height: 36px; flex: none; text-align: center; }
+.lbl-missing { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 8px; padding: 10px 14px; background: var(--warn-soft, #FEF3C7); font-size: 13px; }
+.lbl-design .card-b { display: grid; gap: 14px; }
+.lbl-fields, .lbl-colors { display: flex; flex-wrap: wrap; gap: 6px 16px; margin-top: 6px; font-weight: 500; }
+.lbl-colors label:not(.check) { display: inline-flex; align-items: center; gap: 6px; font-size: 13px; }
+.lbl-colors input[type="color"] { width: 34px; height: 28px; padding: 0; border: 1px solid var(--line); border-radius: 6px; background: none; }
+.lbl-preview-wrap { display: grid; gap: 6px; justify-items: center; padding: 14px; border-radius: 14px; background: var(--surface-3); }
+.lbl-preview .lbl { box-shadow: 0 2px 10px rgba(0, 0, 0, .12); }
+.lbl-actions { display: flex; flex-wrap: wrap; gap: 8px; }
+.lbl-actions .btn.primary { flex: 1; }
+.lbl-note { margin: 0; font-size: 12.5px; }
+@media (max-width: 1100px) { .lbl-grid { grid-template-columns: minmax(0, 1fr); } .lbl-list { max-height: none; } }
+
+/* Setup › Invoice › Printing: paper and copies per document */
+.pr-docs { display: grid; grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); gap: 10px; margin-top: 8px; }
+.pr-doc { display: grid; grid-template-columns: minmax(0, 1fr) 84px; gap: 6px 8px; align-items: end; padding: 10px 12px; border: 1px solid var(--line); border-radius: 12px; background: var(--surface-2); }
+.pr-doc > b { grid-column: 1 / -1; font-size: 13.5px; }
+.pr-copies { display: grid; gap: 2px; font-size: 11.5px; color: var(--muted); }
+.pr-copies .input { height: 40px; }
+.pr-doc .select { height: 40px; }
+
+/* printer setup sheet (assets/pos/print.js) */
+#omni-printer .modal-b { display: grid; gap: 12px; }
+.pr-modes { grid-template-columns: 1fr; }
+.pr-modes .opt { position: relative; cursor: pointer; }
+.pr-modes .opt input { position: absolute; opacity: 0; pointer-events: none; }
+.pr-modes .opt.off { opacity: .5; cursor: not-allowed; }
+.pr-dev { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); font-weight: 600; font-size: 13.5px; }
+.pr-help { font-size: 12.5px; color: var(--muted); }
+.pr-help summary { cursor: pointer; font-weight: 600; color: var(--text); }
+.pr-help code { font-size: 12px; word-break: break-all; }
+#omni-printer .seg.full { display: flex; margin-top: 6px; }
+#omni-printer .seg.full button { flex: 1; }
+
+/* laptop till under 1280px: the hidden top-bar buttons live in the Tools sheet */
+html:not(.app-mode) .up-top .tb-more { display: none; }
+@media (max-width: 1279px) { html:not(.app-mode) .up-top .tb-more { display: grid; } }
+
+/* order page: the action buttons, and the phone receipt copy of an A4 invoice (see Orders\Views\show) */
+.ord-acts { display: contents; }
+.doc-rc { display: none; }
+
+/* tablet back office (701–1100px): wide tables (6+ columns, .tbl-wide from mobile.js) become
+   cards, two a row, so every column is visible without scrolling sideways */
+@media (max-width: 1100px) {
+  html:not(.app-mode) .tbl.cardify.tbl-wide thead { display: none; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide, html:not(.app-mode) .tbl.cardify.tbl-wide tbody { display: block; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide tbody { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; padding: 10px; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide tr { display: block; padding: 12px 14px; border: 1px solid var(--line); border-radius: 14px; background: var(--surface); }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td { display: flex; justify-content: space-between; align-items: center; gap: 10px; padding: 3px 0; border: 0; text-align: right; white-space: normal; min-width: 0; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td::before { content: attr(data-label); flex: none; color: var(--muted); font-size: 11.5px; font-weight: 600; text-align: left; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td:first-child { display: block; padding-bottom: 6px; margin-bottom: 4px; border-bottom: 1px dashed var(--line); text-align: left; font-size: 15px; font-weight: 700; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td:first-child::before, html:not(.app-mode) .tbl.cardify.tbl-wide td[data-label=""]::before { display: none; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td[data-label=""] { justify-content: flex-end; flex-wrap: wrap; padding-top: 8px; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td:empty { display: none; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide tbody tr:hover td { background: transparent; }
+  html:not(.app-mode) .table-wrap:has(> .tbl.cardify.tbl-wide) { overflow: visible; }
+  html:not(.app-mode) .dt-bar { flex-wrap: wrap; }
+  html:not(.app-mode) .dt-bar .search { flex: 1 1 260px; min-width: 0; }
+}
+/* a select checkbox first (products): it sits in the card corner, the next cell is the title */
+html.app-mode .tbl.cardify tr:has(> td:first-child > input[type="checkbox"]) { position: relative; }
+html.app-mode .tbl.cardify td:first-child:has(> input[type="checkbox"]) { position: absolute; top: 12px; right: 14px; padding: 0; margin: 0; border: 0; }
+/* wide tables only turn into cards under 1100px — only then does the checkbox move to the card corner */
+@media (max-width: 1100px) {
+  html:not(.app-mode) .tbl.cardify.tbl-wide tr:has(> td:first-child > input[type="checkbox"]) { position: relative; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td:first-child:has(> input[type="checkbox"]) { position: absolute; top: 12px; right: 14px; padding: 0; margin: 0; border: 0; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td:first-child:has(> input[type="checkbox"]) + td { display: block; padding: 0 28px 6px 0; margin-bottom: 4px; border-bottom: 1px dashed var(--line); text-align: left; font-size: 15px; font-weight: 700; }
+  html:not(.app-mode) .tbl.cardify.tbl-wide td:first-child:has(> input[type="checkbox"]) + td::before { display: none; }
+}
+html.app-mode .tbl.cardify td:first-child:has(> input[type="checkbox"]) + td { display: block; padding: 0 28px 8px 0; margin-bottom: 4px; border-bottom: 1px dashed var(--line); text-align: left; font-size: 15px; font-weight: 700; }
+html.app-mode .tbl.cardify td:first-child:has(> input[type="checkbox"]) + td::before { display: none; }
+/* the invoice number / name opening each card on phones */
+html.app-mode .tbl.cardify td:first-child { font-weight: 700; padding-bottom: 8px; margin-bottom: 4px; border-bottom: 1px dashed var(--line); }
+html.app-mode .tbl.cardify td:first-child a { text-decoration: none; }
+
+/* kitchen order: a checkbox cell in the field grid (next to service staff) */
+.ig.ig-check { align-items: center; gap: 10px; padding-left: 12px; cursor: pointer; font-weight: 600; font-size: 14.5px; }
+.ig.ig-check input { flex: none; width: 20px; height: 20px; padding: 0; accent-color: var(--primary); cursor: pointer; }
+.ig.ig-check .grow { min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.ig.ig-check .ig-btn { align-self: stretch; }
+
+/* tablet (portrait ~748px and up to small laptops): the laptop till, compact — smaller text,
+   more room for the products, the bottom bar in two rows (actions · total + pay) */
+@media (max-width: 1100px) {
+  html:not(.app-mode) .upos { gap: 6px; padding: 6px 6px 0; font-size: 13px; }
+  html:not(.app-mode) .up-top { padding: 4px 8px; gap: 8px; }
+  html:not(.app-mode) .up-top .tbtn, html:not(.app-mode) .up-top .user-chip .av { width: 38px; height: 38px; }
+  html:not(.app-mode) .loc-btn { height: 36px; font-size: 13.5px; padding: 0 6px; }
+  html:not(.app-mode) .loc-n { max-width: 150px; }
+  html:not(.app-mode) .date-pill { height: 36px; padding: 0 10px; font-size: 12.5px; }
+  html:not(.app-mode) .up-body { grid-template-columns: minmax(0, 1fr) minmax(0, 1.08fr); gap: 6px; }
+
+  /* cart side */
+  html:not(.app-mode) .up-fields { gap: 6px; padding: 8px; }
+  html:not(.app-mode) .up-fields > #cust-ig { grid-column: 1 / -1; }
+  html:not(.app-mode) .ig { height: 36px; }
+  html:not(.app-mode) .ig > .ig-ic { width: 32px; }
+  html:not(.app-mode) .ig-btn { width: 34px; }
+  html:not(.app-mode) .ig-btn .ic { width: 18px; height: 18px; }
+  html:not(.app-mode) .ig select, html:not(.app-mode) .ig input { font-size: 12.5px; padding: 0 6px; }
+  html:not(.app-mode) .ig.ig-check { font-size: 12.5px; gap: 6px; padding-left: 8px; }
+  html:not(.app-mode) .ig.ig-check input { width: 16px; height: 16px; padding: 0; }
+  html:not(.app-mode) .up-opts { gap: 6px 12px; font-size: 12.5px; }
+  html:not(.app-mode) .check.big { font-size: 12.5px; }
+  html:not(.app-mode) .ctable { font-size: 12px; }
+  html:not(.app-mode) .ctable th { font-size: 11px; padding: 6px; }
+  html:not(.app-mode) .ctable td { padding: 6px; }
+  html:not(.app-mode) .ctable th:nth-child(2) { width: 104px !important; }
+  html:not(.app-mode) .ctable th:nth-child(3) { width: 74px !important; }
+  html:not(.app-mode) .ctable th:nth-child(4) { width: 26px !important; }
+  html:not(.app-mode) .ctable .psub { font-size: 11px; }
+  html:not(.app-mode) .ctable .psub span:last-child:not(:first-child) { display: none; }
+  html:not(.app-mode) .qty { height: 28px; }
+  html:not(.app-mode) .qty button { width: 24px; }
+  html:not(.app-mode) .qty input { width: 32px; font-size: 12px; }
+  html:not(.app-mode) .ctable .x-btn { width: 22px; height: 22px; }
+  html:not(.app-mode) .cart-sum { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 4px 12px; padding: 8px; font-size: 12px; }
+  html:not(.app-mode) .cart-sum span { min-width: 0; overflow: hidden; text-overflow: ellipsis; }
+  html:not(.app-mode) .up-left .cart-empty { padding: 30px 12px; }
+
+  /* product side: three tiles a row on a 748px tab */
+  html:not(.app-mode) .rp-tabs { gap: 4px; padding: 6px; }
+  html:not(.app-mode) .rp-tab { height: 34px; font-size: 12px; padding: 0 6px; gap: 4px; }
+  html:not(.app-mode) .rp-tab .ic { width: 16px; height: 16px; }
+  html:not(.app-mode) .tiles { grid-template-columns: repeat(auto-fill, minmax(104px, 1fr)); gap: 6px; padding: 6px; }
+  html:not(.app-mode) .tile { padding: 5px 5px 7px; }
+  html:not(.app-mode) .tile-img { height: 52px; margin-bottom: 4px; }
+  html:not(.app-mode) .tile-name { font-size: 11.5px; }
+  html:not(.app-mode) .tile-sku { display: none; }
+  html:not(.app-mode) .tile-price { font-size: 12px; }
+  html:not(.app-mode) .tile-stock { font-size: 10.5px; }
+  html:not(.app-mode) .tile .ribbon { font-size: 9px; padding: 1px 4px; }
+  html:not(.app-mode) .tile-flags .flag { font-size: 9.5px; }
+
+  /* bottom bar */
+  html:not(.app-mode) .up-bottom { flex-wrap: wrap; row-gap: 6px; overflow: visible; padding: 6px 8px; gap: 4px; }
+  html:not(.app-mode) .up-bottom::before { content: ''; order: 5; flex-basis: 100%; height: 0; }
+  html:not(.app-mode) .up-bottom .bb-sep, html:not(.app-mode) .up-bottom .bb-recent { display: none; }
+  html:not(.app-mode) .up-bottom .bb-cancel { height: 38px; padding: 0 10px; }
+  html:not(.app-mode) .up-bottom .bb-act { flex: 1 1 auto; font-size: 11.5px; }
+  html:not(.app-mode) .up-bottom .bb-act .ic { width: 16px; height: 16px; }
+  html:not(.app-mode) .up-bottom .bb-total { order: 6; margin-left: 0; flex: 1 1 auto; text-align: left; }
+  html:not(.app-mode) .up-bottom .bb-total small { font-size: 11px; }
+  html:not(.app-mode) .up-bottom .bb-total b { font-size: 19px; }
+  html:not(.app-mode) .up-bottom .bb-pay { order: 7; flex: 1 1 0; justify-content: center; min-width: 0; height: 44px; font-size: 14.5px; }
+}
+
+/* ======================================================================================
+   PHONE (portrait ≤700px, or turned sideways) — html.app-mode, set in <head> by
+   App\Views\_app_mode. Tablets keep the laptop layout.
+   app.css already has the app pieces (.m-appbar, .m-tabs, .m-cartbar, .m-acts, sheet
+   modals, cardified tables); this lays the server pages out with them.
+   ====================================================================================== */
+html:not(.app-mode) .m-appbar, html:not(.app-mode) .m-tabs, html:not(.app-mode) .m-cartbar,
+html:not(.app-mode) .m-sheet-h, html:not(.app-mode) .m-sheet-f, html:not(.app-mode) .m-acts,
+html:not(.app-mode) .m-addmore, html:not(.app-mode) .m-search-slot { display: none !important; }
+.up-scroll, .rp-head { display: contents; }
+
+/* links and forms dressed as the design's app buttons */
+a.m-biz, a.m-ibtn, a.m-menu-item, .m-tabs a { text-decoration: none; color: inherit; }
+.m-tabs { grid-template-columns: none; grid-auto-flow: column; grid-auto-columns: minmax(0, 1fr); }
+.m-tabs a, .m-tabs button { position: relative; display: grid; justify-items: center; gap: 2px; padding: 2px 0; font-size: 11px; font-weight: 600; color: var(--muted); }
+.m-tabs a.on, .m-tabs button.on { color: var(--primary); }
+.m-tabs a.on .m-tab-ic, .m-tabs button.on .m-tab-ic { background: var(--primary-soft); }
+.m-ibtn i[hidden] { display: none; }
+.m-ibtn .av.sm { width: 32px; height: 32px; font-size: 12px; }
+.m-menu-form { display: contents; }
+.m-menu-item.on { background: var(--primary-soft); border-color: var(--primary-line); color: var(--primary); }
+.m-dlg .modal-b { display: grid; gap: 12px; }
+.m-who { display: flex; align-items: center; justify-content: center; gap: 8px; font-size: 13px; color: var(--muted); padding-top: 4px; }
+.m-who b { color: var(--text); }
+
+/* <dialog> sheets slide up from the bottom on phones */
+html.app-mode dialog.modal-dlg, html.app-mode dialog.modal-dlg.lg, html.app-mode dialog.modal-dlg.sm {
+  width: 100%; max-width: 100%; max-height: 92dvh; margin: auto 0 0; border-radius: 22px 22px 0 0;
+  padding-bottom: env(safe-area-inset-bottom); animation: sheetUp .28s cubic-bezier(.2, .8, .2, 1);
+}
+html.app-mode dialog.modal-dlg::before { content: ''; display: block; width: 40px; height: 5px; border-radius: 3px; background: var(--line); margin: 8px auto 0; }
+html.app-mode dialog.modal-dlg .modal-b { max-height: none; }
+html.app-mode dialog.modal-dlg .modal-f .btn { flex: 1; height: 48px; }
+
+/* ---------- back office: app bar on top, page scrolls, tabs at the bottom ---------- */
+html.app-mode body { overflow: hidden; }
+html.app-mode .app:not(.pos-mode) { display: flex; flex-direction: column; height: 100vh; height: 100dvh; }
+html.app-mode .app:not(.pos-mode) > .sidebar, html.app-mode .app > .scrim, html.app-mode .main > .topbar { display: none; }
+html.app-mode .app:not(.pos-mode) > .main { flex: 1; min-height: 0; height: auto; }
+html.app-mode .main > .view { -webkit-overflow-scrolling: touch; overscroll-behavior: contain; padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+html.app-mode .main > .view > .flash { margin: 12px 12px 0; }
+html.app-mode .page-h { flex-wrap: wrap; }
+html.app-mode .page-h > p, html.app-mode .page-h .page-sub { flex: 1 1 100%; margin: 0; }
+html.app-mode .page-h .seg, html.app-mode .tabs, html.app-mode .chips { max-width: 100%; overflow-x: auto; flex-wrap: nowrap; scrollbar-width: none; }
+html.app-mode .page-h .seg::-webkit-scrollbar, html.app-mode .tabs::-webkit-scrollbar { display: none; }
+html.app-mode .stats .stat > .ic { width: 34px; height: 34px; padding: 8px; border-radius: 11px; }
+html.app-mode .card-h { padding: 12px 14px; flex-wrap: wrap; gap: 8px; }
+html.app-mode .card-b { padding: 14px; }
+.m-chiprow { display: contents; }
+html.app-mode .m-chiprow { display: flex; gap: 8px; align-items: center; flex: 1 1 100%; min-width: 0; overflow-x: auto; margin: 0 -12px; padding: 2px 12px; scrollbar-width: none; scroll-snap-type: x proximity; }
+html.app-mode .m-chiprow::-webkit-scrollbar { display: none; }
+html.app-mode .m-chiprow > .chip { flex: none; scroll-snap-align: start; }
+html.app-mode .m-chiprow > .range-custom { flex: none; }
+html.app-mode .m-chiprow > .range-custom .input.sm { height: 36px; }
+html.app-mode .filter-bar { gap: 8px; }
+html.app-mode .filter-bar > label { flex: 1 1 calc(50% - 8px); min-width: 0; display: grid; gap: 4px; font-size: 12px; font-weight: 600; }
+html.app-mode .filter-bar > label .input, html.app-mode .filter-bar > label .select { width: 100%; }
+html.app-mode .filter-bar .input, html.app-mode .filter-bar .select { flex: 1 1 140px; height: 42px; }
+html.app-mode .filter-bar > .btn { flex: 1 1 calc(50% - 8px); height: 42px; align-self: end; }
+html.app-mode .bo-row { grid-template-columns: 1fr 1fr 40px; }
+html.app-mode .mini-grid { grid-template-columns: 1fr; }
+/* data tables: search full width, rows as cards */
+html.app-mode .dt-bar { flex-wrap: wrap; gap: 8px; }
+html.app-mode .dt-bar .search { flex: 1 1 100%; min-width: 0; }
+html.app-mode .dt-bar .search input { font-size: 16px; }
+html.app-mode .tbl.cardify td:first-child a { font-weight: 700; }
+html.app-mode .table-wrap:has(> .tbl:not(.cardify)) { overflow-x: auto; }
+
+/* ---------- POS till: catalogue full screen, cart as a sheet ---------- */
+html.app-mode .upos { gap: 0; padding: 0; background: var(--bg); }
+html.app-mode .upos > .up-top, html.app-mode .upos > .up-bottom { display: none; }
+html.app-mode .upos > .sbanners { padding: 8px 12px 0; }
+html.app-mode .up-body { display: block; flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; -webkit-overflow-scrolling: touch; padding-bottom: calc(84px + env(safe-area-inset-bottom)); }
+html.app-mode .upos.has-cart .up-body { padding-bottom: calc(152px + env(safe-area-inset-bottom)); }
+html.app-mode .up-right { display: block; border: 0; border-radius: 0; background: transparent; }
+html.app-mode .rp-head { position: sticky; top: 0; z-index: 6; display: grid; gap: 8px; padding: 10px 12px 8px; background: color-mix(in srgb, var(--bg) 92%, transparent); backdrop-filter: blur(10px); }
+html.app-mode .rp-tabs.m-chips { display: flex; grid-template-columns: none; padding: 0 12px 2px; border: 0; }
+html.app-mode .rp-tabs.m-chips .chip .ic.sym { width: 16px; height: 16px; }
+html.app-mode .rp-filters { padding: 0; }
+html.app-mode .tiles { padding: 4px 12px 16px; }
+html.app-mode .tile-sku { display: none; }
+
+html.app-mode .up-left {
+  position: fixed; inset: 0; z-index: 60; border: 0; border-radius: 0; background: var(--bg);
+  transform: translateY(103%); visibility: hidden;
+  transition: transform .32s cubic-bezier(.2, .8, .2, 1), visibility 0s .32s;
+}
+html.app-mode .upos.cart-open .up-left { transform: none; visibility: visible; transition: transform .32s cubic-bezier(.2, .8, .2, 1); }
+html.app-mode .up-scroll { flex: 1; min-height: 0; overflow-y: auto; overscroll-behavior: contain; display: flex; flex-direction: column; gap: 10px; padding: 12px; }
+html.app-mode .up-scroll > * { flex: none; }
+html.app-mode .up-scroll > .up-fields, html.app-mode .up-scroll > .ctable-wrap, html.app-mode .up-scroll > .cart-sum { background: var(--surface); border: 1px solid var(--line); border-radius: 16px; }
+html.app-mode .up-scroll > .ctable-wrap { border-radius: 16px 16px 0 0; margin-bottom: -10px; border-bottom: 0; }
+html.app-mode .up-scroll > .m-addmore { background: var(--surface); border: 1px solid var(--line); border-top-style: dashed; border-radius: 0 0 16px 16px; }
+html.app-mode .up-scroll .cart-empty { padding: 26px 16px; }
+html.app-mode .up-scroll .cart-sum > div:last-child b { font-size: 17px; }
+html.app-mode .up-fields .ac { max-height: 46vh; }
+html.app-mode .m-acts { grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); }
+html.app-mode .m-act:disabled, html.app-mode .m-pay-btns .bb-pay:disabled { opacity: .5; }
+html.app-mode .m-pay-total b { color: var(--text); }
+
+/* order, customer and register pages on phones */
+html.app-mode .ord-grid { grid-template-columns: minmax(0, 1fr); }
+html.app-mode .doc-frame { padding: 8px; border-radius: 14px; }
+html.app-mode .doc-frame.has-rc .doc-a4 { display: none; }
+html.app-mode .doc-frame.has-rc .doc-rc { display: block; }
+html.app-mode .doc-frame .receipt { max-width: none; }
+html.app-mode .ord-acts { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; flex: 1 1 100%; }
+html.app-mode .ord-acts .btn { height: 40px; padding: 0 6px; font-size: 13px; gap: 5px; min-width: 0; white-space: nowrap; overflow: hidden; }
+html.app-mode .ord-acts #pay-btn { grid-column: 1 / -1; order: -1; height: 48px; font-size: 15px; }
+html.app-mode .ord-side .kv { padding: 10px 14px; }
+html.app-mode .dbk-page .dbk-top { grid-template-columns: 1fr 1fr; }
+html.app-mode .reg-open { max-width: none; }
+
+/* Setup › Website */
+.web-img { display: grid; gap: 6px; align-content: start; }
+.web-img-cur { display: flex; align-items: center; gap: 12px; padding: 8px; border: 1px dashed var(--line); border-radius: 12px; background: var(--surface-2, transparent); }
+.web-img-cur img { max-width: 120px; max-height: 56px; object-fit: contain; border-radius: 6px; background: #fff; }
+.bo-form .field.span2 > b + small { display: block; margin-top: 2px; }
+.web-img input[type="file"] { height: auto; padding: 8px 10px; }
+
+/* Print labels: items | serial codes stacked on the left, the design on the right */
+@media (min-width: 1101px) { .lbl-grid .lbl-design { grid-column: 2; grid-row: 1 / span 2; } .lbl-grid .lbl-serial { grid-column: 1; } }
+.lbl-serial-prev code { display: block; padding: 8px 10px; border: 1px dashed var(--line); border-radius: 10px; font-size: 13px; overflow-wrap: anywhere; }
+.lbl-sheetonly small, .lbl-sheetcustom small { color: var(--muted); }
+
+/* laptop widths (side bar open): tighter cells so wide tables fit their card instead of hiding the last column */
+@media (min-width: 1101px) and (max-width: 1500px) {
+  .table-wrap > .tbl th, .table-wrap > .tbl td { padding-left: 10px; padding-right: 10px; }
+  .table-wrap > .tbl .pl-cell { min-width: 170px; }
+}
+
+/* page grids: a wide child (tab strip, table, chips) scrolls inside itself instead of stretching the whole page */
+.page > * { min-width: 0; }
+.page .seg { max-width: 100%; overflow-x: auto; scrollbar-width: thin; }
+.page .seg a { flex: 0 0 auto; }
+#ivx { overflow-x: clip; }
+.upos { overflow-x: clip; }
+
+/* phones: text links in lists get a finger-sized tap area (44px with the line) */
+html.app-mode .tbl td a.link, html.app-mode .tbl td a.pname, html.app-mode .card-b a.link, html.app-mode .dash a.link, html.app-mode .page-h a.link, html.app-mode .page-sub a.link { display: inline-block; padding: 9px 4px; margin: -9px -4px; min-height: 32px; box-sizing: content-box; }
+html.app-mode .tbl td a.link:has(> .ic) { padding: 9px 6px; }
+
+/* add-row forms (category, tax …): one line on wide screens, stacked full-width fields on phones */
+.row-add .ra-ic { width: 180px; flex: none; }
+.row-add .ra-ord { width: 100px; flex: none; }
+.row-add .input { min-width: 0; flex: 1; }
+a.tap { display: inline-block; padding: 8px 12px; margin: -8px -12px; }
+@media (max-width: 640px) {
+  .row-add { flex-wrap: wrap; gap: 8px; }
+  .row-add .ra-ic, .row-add .ra-ord, .row-add .input, .row-add .btn, .row-add .select { flex: 1 1 100%; width: 100%; }
+  .row-add .ra-ic .select { width: 100%; }
+}
+html.app-mode .tbl td a.link.tap { padding: 9px 14px; margin: -9px -14px; }
+
+/* file pickers match the form fields */
+input[type="file"] { width: 100%; max-width: 100%; padding: 8px; border: 1.5px dashed var(--line); border-radius: 12px; background: var(--surface-2, var(--surface)); color: var(--muted); font-size: 13px; cursor: pointer; }
+input[type="file"]::file-selector-button { margin-right: 12px; padding: 8px 14px; border: 0; border-radius: 9px; background: var(--primary); color: var(--primary-ink, #fff); font: inherit; font-weight: 600; cursor: pointer; }
+input[type="file"]:hover { border-color: var(--primary); }
+input[type="file"] { height: auto; min-height: 52px; margin-bottom: 10px; }
+
+/* ---- POS product tiles: compact (more per row, shorter tiles) ---- */
+.tiles { grid-template-columns: repeat(auto-fill, minmax(116px, 1fr)); gap: 6px; padding: 8px; }
+.tile { padding: 5px 5px 7px; gap: 1px; }
+.tile-img { height: 56px; margin-bottom: 4px; }
+.tile-name { font-size: 12px; line-height: 1.25; }
+.tile-price { font-size: 12.5px; }
+.tile-stock { font-size: 10.5px; }
+.tile .ribbon { top: 4px; left: 4px; font-size: 9px; padding: 1px 4px; }
+html.app-mode .tiles { grid-template-columns: repeat(auto-fill, minmax(112px, 1fr)); gap: 6px; padding: 4px 8px 14px; }
+html.app-mode .tile { border-radius: 12px; padding: 5px 5px 7px; }
+html.app-mode .tile-img { height: 58px; border-radius: 9px; margin-bottom: 4px; }
+html.app-mode .tile-name { font-size: 12px; }
+html.app-mode .tile-price { font-size: 12.5px; }
+@media (max-width: 640px) {
+  .tiles, html.app-mode .tiles { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; padding: 4px 6px 14px; }
+  .tile, html.app-mode .tile { padding: 4px 4px 6px; border-radius: 10px; }
+  .tile-img, html.app-mode .tile-img { height: 50px; margin-bottom: 3px; }
+  .tile-name, html.app-mode .tile-name { font-size: 11px; -webkit-line-clamp: 2; }
+  .tile-price, html.app-mode .tile-price { font-size: 11.5px; }
+  .tile-stock, .tile-sku, .tile-flags { display: none; }
+}
+@media (max-width: 340px) { .tiles, html.app-mode .tiles { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+
+/* =====================================================================================
+   PHONE — minimal, compact, modern. No sideways carousels: chip / tab rows wrap, nothing
+   is wider than the screen, controls are smaller, tap targets stay >= 32px.
+   ===================================================================================== */
+@media (max-width: 640px) {
+  html.app-mode body { font-size: 14px; }
+  html.app-mode .page, html.app-mode .view, html.app-mode main { min-width: 0; max-width: 100%; overflow-x: clip; }
+  html.app-mode .page { padding: 8px 10px 16px; gap: 8px; }
+  html.app-mode .page > *, html.app-mode .card, html.app-mode .card-b, html.app-mode form { min-width: 0; max-width: 100%; }
+
+  /* chip / tab / segmented rows wrap instead of scrolling sideways */
+  html.app-mode .chips, html.app-mode .m-chips, html.app-mode .m-chiprow, html.app-mode .tabs, html.app-mode .prod-cats, html.app-mode .cats,
+  html.app-mode .ivx-cats, html.app-mode .to-cats, html.app-mode .page-h .seg, html.app-mode .seg, html.app-mode .seg.full, html.app-mode .adm-tabs, html.app-mode .web-tabs, html.app-mode .strip {
+    flex-wrap: nowrap !important; overflow-x: auto !important; overflow-y: hidden !important; max-width: 100%; min-width: 0; scrollbar-width: none;
+    gap: 5px; scroll-snap-type: x proximity; overscroll-behavior-x: contain;
+  }
+  html.app-mode .chips::-webkit-scrollbar, html.app-mode .m-chips::-webkit-scrollbar, html.app-mode .prod-cats::-webkit-scrollbar, html.app-mode .ivx-cats::-webkit-scrollbar, html.app-mode .cats::-webkit-scrollbar, html.app-mode .seg::-webkit-scrollbar { display: none; }
+  html.app-mode .tabs { padding: 0 0 6px; }
+  html.app-mode .chip, html.app-mode .m-chips .chip, html.app-mode .prod-cats .chip, html.app-mode .ivx-cats .chip, html.app-mode .to-cats > * {
+    height: 28px; padding: 0 10px; font-size: 12px; gap: 4px; flex: 0 0 auto; }
+  html.app-mode .chip .n { min-width: 17px; height: 17px; padding: 0 5px; font-size: 10px; }
+  html.app-mode .seg button, html.app-mode .tabs a, html.app-mode .tabs button { height: 30px; padding: 0 10px; font-size: 12px; flex: 0 1 auto; }
+
+  /* controls */
+  html.app-mode .btn { height: 36px; padding: 0 12px; font-size: 13px; border-radius: 10px; gap: 5px; }
+  html.app-mode .btn.sm { height: 30px; padding: 0 9px; font-size: 12px; }
+  html.app-mode .btn.icon { width: 36px; padding: 0; }
+  html.app-mode .btn .ic, html.app-mode .btn svg { width: 16px; height: 16px; }
+  html.app-mode .input, html.app-mode .select, html.app-mode input[type=date], html.app-mode input[type=time], html.app-mode input[type=number], html.app-mode input[type=text], html.app-mode input[type=search] {
+    height: 38px; font-size: 14px; padding-top: 0; padding-bottom: 0; min-width: 0; max-width: 100%; }
+  html.app-mode textarea.input, html.app-mode textarea { font-size: 14px; }
+  html.app-mode input[type=date] { padding-right: 8px; }
+  html.app-mode .page-h .search { height: 38px; }
+  html.app-mode .page-h .search input { font-size: 14px; height: auto; }
+  html.app-mode label, html.app-mode .field > label, html.app-mode .ivx-field > label { font-size: 11.5px; }
+  html.app-mode .form-grid, html.app-mode .filters, html.app-mode .filter-grid { gap: 6px; }
+
+  /* cards, stats, headings */
+  html.app-mode .card { border-radius: 12px; }
+  html.app-mode .card-h { padding: 9px 12px; font-size: 13.5px; }
+  html.app-mode .card-b { padding: 10px 12px; }
+  html.app-mode .stats, html.app-mode .kpis { gap: 6px; }
+  html.app-mode .stat, html.app-mode .kpi { padding: 9px 11px; border-radius: 12px; }
+  html.app-mode .stat b, html.app-mode .kpi b { font-size: 16px; }
+  html.app-mode .stat small, html.app-mode .kpi small, html.app-mode .stat span, html.app-mode .kpi span { font-size: 11.5px; }
+  html.app-mode .stats .stat > .ic { width: 28px; height: 28px; padding: 6px; border-radius: 9px; }
+  html.app-mode h1 { font-size: 18px; } html.app-mode h2 { font-size: 16px; } html.app-mode h3 { font-size: 14px; }
+  html.app-mode .page-h { gap: 6px; }
+  html.app-mode .alert, html.app-mode .notice, html.app-mode .flash { padding: 8px 10px; font-size: 12.5px; border-radius: 10px; }
+  html.app-mode .tbl td, html.app-mode .tbl th { font-size: 12.5px; }
+  html.app-mode .cardify td { padding: 5px 0; }
+
+  /* More sheet: three tidy columns inside the dialog */
+  html.app-mode .m-dlg .modal-b, html.app-mode .m-dlg { min-width: 0; max-width: 100%; }
+  html.app-mode .m-grid-menu { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 6px; }
+  html.app-mode .m-menu-item { min-height: 66px; padding: 8px 4px; gap: 5px; border-radius: 12px; font-size: 11.5px; line-height: 1.2; text-align: center; min-width: 0; overflow-wrap: anywhere; }
+  html.app-mode .m-menu-item .ic { width: 22px; height: 22px; }
+
+  /* Kitchen: side list becomes a wrapped grid, items strip wraps */
+  html.app-mode .ks-list { grid-auto-flow: row; grid-template-columns: repeat(2, minmax(0, 1fr)); grid-auto-columns: auto; overflow: visible; }
+  html.app-mode .ks-row { padding: 6px; gap: 6px; }
+  html.app-mode .ks-row b { font-size: 12.5px; } html.app-mode .ks-row small { font-size: 10.5px; }
+  html.app-mode .ks-q { min-width: 30px; height: 26px; font-size: 12.5px; }
+  html.app-mode .kds { gap: 8px; }
+
+  /* New invoice: slimmer sticky pay bar */
+  .ivx-actions { flex-wrap: wrap; gap: 6px; padding: 8px 10px; bottom: 6px; border-radius: 14px; }
+  .ivx-payrow { flex: 1 1 100%; display: grid; grid-template-columns: auto 1fr 1fr; gap: 6px; align-items: end; }
+  .ivx-payrow .ivx-payic { display: none; }
+  .ivx-payrow .ivx-field:nth-child(4) { display: none; }
+  .ivx-payrow .ivx-field > label { display: none; }
+  .ivx-payrow { grid-template-columns: 1fr 1fr; }
+  .ivx-act-total b { font-size: 16px; }
+  .ivx-actions .btn { height: 36px; padding: 0 10px; font-size: 12.5px; }
+  .ivx-actions .ivx-cta { flex: 1 1 auto; }
+  .ivx-card { padding: 10px 12px; border-radius: 12px; }
+}
+@media (max-width: 640px) {
+  html.app-mode .hero { padding: 12px; border-radius: 16px; }
+  html.app-mode .hero-q { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+  html.app-mode .qa { min-width: 0; padding: 8px 2px; gap: 3px; border-radius: 12px; font-size: 10.5px; }
+  html.app-mode .qa .ic { width: 18px; height: 18px; }
+}
+
+/* POS till categories stay a single swipeable row (carousel) */
+@media (max-width: 640px) {
+  html.app-mode #rp-tabs, html.app-mode .rp-tabs.m-chips {
+    flex-wrap: nowrap !important; overflow-x: auto !important; overflow-y: hidden !important; scroll-snap-type: x proximity;
+    margin-left: -10px !important; margin-right: -10px !important; padding: 0 10px 2px !important; scrollbar-width: none; max-width: none;
+  }
+  html.app-mode #rp-tabs::-webkit-scrollbar { display: none; }
+  html.app-mode #rp-tabs .chip { flex: none; scroll-snap-align: start; }
+}
+
+/* New invoice on phones: the Generate-invoice panel sits at the very end of the page, not floating over the content */
+@media (max-width: 640px) {
+  html.app-mode .ivx-actions { position: static; bottom: auto; margin-top: 4px; backdrop-filter: none; box-shadow: none; background: var(--surface); }
+}
+
+/* till: customer phone/due chip is a grid cell; totals block is tighter */
+.up-fields .ig-chip { height: 42px; justify-content: center; border-radius: var(--radius-sm); min-width: 0; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.cart-sum { gap: 2px 22px; padding: 6px 14px; font-size: 12.5px; line-height: 1.25; }
+.cart-sum > div { min-height: 24px; }
+.cart-sum .edit-i { width: 20px; height: 20px; }
+html.app-mode .cart-sum { gap: 4px; padding: 10px 12px; font-size: 13px; }
+
+/* ---- Products per row (Setup › POS): #grid[data-cols]; phones cap at 3, tablets at 4 ---- */
+.tiles[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 10px; }
+.tiles[data-cols="3"] { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 8px; }
+.tiles[data-cols="4"] { grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 6px; }
+.tiles[data-cols="5"] { grid-template-columns: repeat(5, minmax(0, 1fr)); gap: 5px; }
+.tiles[data-cols="6"] { grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 4px; }
+.tiles[data-cols] .tile { min-width: 0; transition: transform .15s ease, box-shadow .15s ease, border-color .15s ease; animation: tileIn .22s ease both; }
+@keyframes tileIn { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: none; } }
+/* bigger cards for 2 and 3 per row */
+.tiles[data-cols="2"] .tile-img { height: 96px; } .tiles[data-cols="2"] .tile-name { font-size: 14px; } .tiles[data-cols="2"] .tile-price { font-size: 15px; } .tiles[data-cols="2"] .tile-stock { font-size: 11.5px; }
+.tiles[data-cols="3"] .tile-img { height: 76px; } .tiles[data-cols="3"] .tile-name { font-size: 13px; } .tiles[data-cols="3"] .tile-price { font-size: 13.5px; }
+/* denser cards for 5 and 6 per row: smaller image and type, drop the secondary lines */
+.tiles[data-cols="5"] .tile-img { height: 46px; } .tiles[data-cols="5"] .tile-name { font-size: 11px; -webkit-line-clamp: 2; } .tiles[data-cols="5"] .tile-price { font-size: 11.5px; } .tiles[data-cols="5"] .tile-stock { font-size: 9.5px; }
+.tiles[data-cols="6"] .tile-img { height: 38px; margin-bottom: 2px; } .tiles[data-cols="6"] .tile-name { font-size: 10.5px; -webkit-line-clamp: 2; } .tiles[data-cols="6"] .tile-price { font-size: 11px; }
+.tiles[data-cols="6"] .tile-stock, .tiles[data-cols="6"] .tile-sku, .tiles[data-cols="6"] .tile-flags, .tiles[data-cols="5"] .tile-sku, .tiles[data-cols="5"] .tile-flags { display: none; }
+.tiles[data-cols="5"] .tile, .tiles[data-cols="6"] .tile { padding: 4px 4px 5px; border-radius: 9px; }
+.tiles[data-cols="5"] .qbadge, .tiles[data-cols="6"] .qbadge { transform: scale(.85); transform-origin: top right; }
+@media (max-width: 1100px) { .tiles[data-cols="5"], .tiles[data-cols="6"] { grid-template-columns: repeat(4, minmax(0, 1fr)); } }
+@media (max-width: 640px) {
+  .tiles[data-cols="4"], .tiles[data-cols="5"], .tiles[data-cols="6"], html.app-mode .tiles[data-cols="4"], html.app-mode .tiles[data-cols="5"], html.app-mode .tiles[data-cols="6"] { grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 5px; }
+  html.app-mode .tiles[data-cols="2"], .tiles[data-cols="2"] { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
+  .tiles[data-cols="2"] .tile-img { height: 84px; }
+  .tiles[data-cols="2"] .tile-stock { display: block; }
+}
+@media (max-width: 340px) { html.app-mode .tiles[data-cols="3"], .tiles[data-cols="3"], .tiles[data-cols="4"], .tiles[data-cols="5"], .tiles[data-cols="6"] { grid-template-columns: repeat(2, minmax(0, 1fr)); } }
+@media (prefers-reduced-motion: reduce) { .tiles[data-cols] .tile { animation: none; transition: none; } }
+
+/* phones: scrolling works by touch, no visible scrollbars (page, lists, chip rows, tables, dialogs) */
+html.app-mode, html.app-mode * { scrollbar-width: none; -ms-overflow-style: none; }
+html.app-mode *::-webkit-scrollbar, html.app-mode::-webkit-scrollbar { display: none; width: 0; height: 0; }
+@media (max-width: 700px) {
+  html, html * { scrollbar-width: none; -ms-overflow-style: none; }
+  html *::-webkit-scrollbar, html::-webkit-scrollbar { display: none; width: 0; height: 0; }
+}

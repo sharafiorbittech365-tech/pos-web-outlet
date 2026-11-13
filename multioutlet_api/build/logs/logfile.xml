@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="F:\My Project\POS\Application\apps\multioutlet_api\phpunit.dist.xml" tests="9" assertions="167" errors="0" failures="0" skipped="0" time="23.459757">
+    <testsuite name="App" tests="9" assertions="167" errors="0" failures="0" skipped="0" time="23.459757">
+      <testsuite name="Tests\Feature\MultisiteTest" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" tests="7" assertions="164" errors="0" failures="0" skipped="0" time="23.443098">
+        <testcase name="testCredentialRules" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="98" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="32" time="21.391055"/>
+        <testcase name="testWebsiteOffModuleOffAndSuspended" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="125" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="12" time="0.220708"/>
+        <testcase name="testGatewayTokenWithHost" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="138" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="11" time="0.259837"/>
+        <testcase name="testCatalogueGroupsOutletsWithTheirOwnPriceAndStock" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="147" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="20" time="0.327555"/>
+        <testcase name="testFilters" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="178" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="44" time="0.527198"/>
+        <testcase name="testOrderGoesIntoTheChosenOutletOnly" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="207" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="37" time="0.525315"/>
+        <testcase name="testOrderFollowsTheOutletsCheckoutSettings" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\Feature\MultisiteTest.php" line="252" class="Tests\Feature\MultisiteTest" classname="Tests.Feature.MultisiteTest" assertions="8" time="0.191429"/>
+      </testsuite>
+      <testsuite name="HealthTest" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\unit\HealthTest.php" tests="2" assertions="3" errors="0" failures="0" skipped="0" time="0.016659">
+        <testcase name="testIsDefinedAppPath" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\unit\HealthTest.php" line="12" class="HealthTest" classname="HealthTest" assertions="1" time="0.006161"/>
+        <testcase name="testBaseUrlHasBeenSet" file="F:\My Project\POS\Application\apps\multioutlet_api\tests\unit\HealthTest.php" line="17" class="HealthTest" classname="HealthTest" assertions="2" time="0.010498"/>
+      </testsuite>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="CLI Arguments" tests="18" assertions="131" errors="0" failures="0" skipped="0" time="116.898472">
+    <testsuite name="AuthTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\AuthTest.php" tests="1" assertions="4" errors="0" failures="0" skipped="0" time="27.426131">
+      <testcase name="testPagesNeedASignedInStaffMember" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\AuthTest.php" line="58" class="AuthTest" classname="AuthTest" assertions="4" time="27.426131"/>
+    </testsuite>
+    <testsuite name="BusinessTypesTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\BusinessTypesTest.php" tests="1" assertions="5" errors="0" failures="0" skipped="0" time="14.974635">
+      <testcase name="testPagesLoad" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\BusinessTypesTest.php" line="18" class="BusinessTypesTest" classname="BusinessTypesTest" assertions="5" time="14.974635"/>
+    </testsuite>
+    <testsuite name="LocationsTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\LocationsTest.php" tests="2" assertions="22" errors="0" failures="0" skipped="0" time="10.481775">
+      <testcase name="testPagesAndEnableDisable" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\LocationsTest.php" line="132" class="LocationsTest" classname="LocationsTest" assertions="20" time="10.441553"/>
+      <testcase name="testOnlyPlatformSettingsStaffCanManageLocations" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\LocationsTest.php" line="166" class="LocationsTest" classname="LocationsTest" assertions="2" time="0.040223"/>
+    </testsuite>
+    <testsuite name="MedicinesTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\MedicinesTest.php" tests="1" assertions="5" errors="0" failures="0" skipped="0" time="9.910581">
+      <testcase name="testSuperAdminPagesImportAndToggle" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\MedicinesTest.php" line="141" class="MedicinesTest" classname="MedicinesTest" assertions="5" time="9.910581"/>
+    </testsuite>
+    <testsuite name="ModuleRulesAdminTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\ModuleRulesAdminTest.php" tests="1" assertions="8" errors="0" failures="0" skipped="0" time="9.395681">
+      <testcase name="testSystemHealthPage" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\ModuleRulesAdminTest.php" line="112" class="ModuleRulesAdminTest" classname="ModuleRulesAdminTest" assertions="8" time="9.395681"/>
+    </testsuite>
+    <testsuite name="PagesTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PagesTest.php" tests="4" assertions="43" errors="0" failures="0" skipped="0" time="11.623154">
+      <testcase name="testEveryPageLoads" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PagesTest.php" line="15" class="PagesTest" classname="PagesTest" assertions="25" time="11.293742"/>
+      <testcase name="testInvoicePrintViewShowsTheInvoice" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PagesTest.php" line="29" class="PagesTest" classname="PagesTest" assertions="3" time="0.162239"/>
+      <testcase name="testPlanCrudAndPriceList" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PagesTest.php" line="39" class="PagesTest" classname="PagesTest" assertions="8" time="0.110510"/>
+      <testcase name="testSettingsAndAnnouncement" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PagesTest.php" line="55" class="PagesTest" classname="PagesTest" assertions="7" time="0.056664"/>
+    </testsuite>
+    <testsuite name="PricingTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" tests="6" assertions="28" errors="0" failures="0" skipped="0" time="11.243674">
+      <testcase name="testPricingPageListsTheSeededPriceList" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" line="22" class="PricingTest" classname="PricingTest" assertions="6" time="9.675122"/>
+      <testcase name="testChangingTheBasePriceChangesTheBill" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" line="33" class="PricingTest" classname="PricingTest" assertions="4" time="0.423849"/>
+      <testcase name="testCustomerDiscountPackageAndPriceOverride" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" line="51" class="PricingTest" classname="PricingTest" assertions="6" time="0.428591"/>
+      <testcase name="testOutletDiscountRulesAreEditable" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" line="65" class="PricingTest" classname="PricingTest" assertions="4" time="0.366696"/>
+      <testcase name="testPackageCreateAndAssign" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" line="76" class="PricingTest" classname="PricingTest" assertions="6" time="0.284848"/>
+      <testcase name="testBrandFormValidatesTheDomain" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\PricingTest.php" line="89" class="PricingTest" classname="PricingTest" assertions="2" time="0.064568"/>
+    </testsuite>
+    <testsuite name="RbacTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\RbacTest.php" tests="1" assertions="11" errors="0" failures="0" skipped="0" time="11.032694">
+      <testcase name="testSalesCannotOpenRestrictedPages" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\RbacTest.php" line="15" class="RbacTest" classname="RbacTest" assertions="11" time="11.032694"/>
+    </testsuite>
+    <testsuite name="ServersTest" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\ServersTest.php" tests="1" assertions="5" errors="0" failures="0" skipped="0" time="10.810146">
+      <testcase name="testServerPagesRender" file="F:\My Project\POS\Application\apps\superadmin\tests\feature\ServersTest.php" line="79" class="ServersTest" classname="ServersTest" assertions="5" time="10.810146"/>
+    </testsuite>
+  </testsuite>
+</testsuites>

@@ -1,0 +1,12 @@
+/* Order page: customer location card (Orders/Views/_location.php, order-map.js) */
+.ord-loc .kv { margin-bottom: 0; }
+.ord-map { position: relative; height: 220px; margin: 10px 14px 0; border-radius: 10px; overflow: hidden; border: 1px solid var(--line, #e5e7eb); background: var(--surface-2, #f3f4f6); display: grid; place-items: center; z-index: 0; }
+.ord-map.leaflet-container { display: block; }
+.ord-map-wait { font-size: 12.5px; }
+.ord-map-links { display: flex; flex-wrap: wrap; gap: 8px; padding: 10px 14px 14px; }
+.ord-loc .mono { font-variant-numeric: tabular-nums; }
+@media (max-width: 700px) {
+  .ord-map { height: 180px; margin: 10px 10px 0; }
+  .ord-map-links .btn { flex: 1 1 auto; justify-content: center; }
+}
+@media print { .ord-loc { display: none; } }

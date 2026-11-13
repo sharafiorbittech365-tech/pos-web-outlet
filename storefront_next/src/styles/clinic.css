@@ -1,0 +1,23 @@
+/* Clinic sites: doctor cards, doctor page, appointment confirmation. Uses the storefront tokens. */
+.dr-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(280px, 1fr)); gap: 18px; }
+.dr-card { display: flex; flex-direction: column; gap: 10px; padding: 22px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); box-shadow: var(--shadow); }
+.dr-top { display: flex; gap: 14px; align-items: center; }
+.dr-av { flex: 0 0 76px; width: 76px; height: 76px; border-radius: 50%; overflow: hidden; display: grid; place-items: center; background: var(--brand-soft); color: var(--brand); font: 800 24px/1 var(--head); }
+.dr-av img { width: 100%; height: 100%; object-fit: cover; }
+.dr-av.lg { flex-basis: 120px; width: 120px; height: 120px; font-size: 36px; }
+.dr-card h3 { font-size: 18px; }
+.dr-meta { color: var(--muted); font-size: 14px; }
+.dr-spec { display: inline-block; padding: 3px 10px; border-radius: 999px; background: var(--brand-soft); color: var(--brand); font-weight: 700; font-size: 12.5px; }
+.dr-sched { display: flex; flex-wrap: wrap; gap: 6px; }
+.dr-sched span { padding: 4px 10px; border-radius: 10px; background: var(--alt); font-size: 12.5px; font-weight: 600; }
+.dr-card .btn-p { margin-top: auto; justify-content: center; }
+.dr-head { display: flex; gap: 22px; align-items: center; padding: 22px; border-radius: var(--r-lg); background: var(--surface); border: 1px solid var(--line); margin-bottom: 18px; }
+.dr-head .grow { flex: 1; min-width: 0; display: grid; gap: 6px; }
+.dr-about { color: var(--muted); white-space: pre-line; }
+.dchip.closed { opacity: .45; }
+.dr-serial { display: inline-grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; background: var(--brand); color: var(--brand-ink); font: 800 30px/1 var(--head); margin: 6px auto; }
+.dr-empty { padding: 40px 20px; text-align: center; color: var(--muted); border: 1px dashed var(--line); border-radius: var(--r-lg); background: var(--surface); }
+@media (max-width: 700px) {
+  .dr-head { flex-direction: column; text-align: center; }
+  .dr-grid { grid-template-columns: 1fr; }
+}

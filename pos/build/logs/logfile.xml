@@ -1,0 +1,9 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<testsuites>
+  <testsuite name="ProductImportTest" file="F:\My Project\POS\Application\New Application\pos\tests\posa\ProductImportTest.php" tests="4" assertions="44" errors="0" failures="0" skipped="0" time="5.071781">
+    <testcase name="testNewOutletCopiesChosenProductsWithOpeningStock" file="F:\My Project\POS\Application\New Application\pos\tests\posa\ProductImportTest.php" line="31" class="ProductImportTest" classname="ProductImportTest" assertions="25" time="1.278040"/>
+    <testcase name="testOnlySameBusinessTypeAndOwnOutlets" file="F:\My Project\POS\Application\New Application\pos\tests\posa\ProductImportTest.php" line="97" class="ProductImportTest" classname="ProductImportTest" assertions="5" time="1.605854"/>
+    <testcase name="testPagesRender" file="F:\My Project\POS\Application\New Application\pos\tests\posa\ProductImportTest.php" line="117" class="ProductImportTest" classname="ProductImportTest" assertions="11" time="1.231955"/>
+    <testcase name="testStarterAndEmptyChoices" file="F:\My Project\POS\Application\New Application\pos\tests\posa\ProductImportTest.php" line="134" class="ProductImportTest" classname="ProductImportTest" assertions="3" time="0.955932"/>
+  </testsuite>
+</testsuites>

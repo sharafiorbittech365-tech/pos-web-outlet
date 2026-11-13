@@ -1,0 +1,6 @@
+Product Import
+ [x] New outlet copies chosen products with opening stock
+ [x] Only same business type and own outlets
+ [x] Pages render
+ [x] Starter and empty choices
+

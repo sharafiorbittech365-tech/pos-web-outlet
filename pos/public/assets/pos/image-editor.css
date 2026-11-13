@@ -1,0 +1,43 @@
+/* Picture editor (image-editor.js) */
+html.ie-open { overflow: hidden; }
+.ie-ov { position: fixed; inset: 0; z-index: 10000; background: rgba(15, 20, 32, .72); display: grid; place-items: center; padding: 16px; }
+.ie-box { width: min(1040px, 100%); height: min(720px, 100%); background: var(--surface, #fff); color: var(--text, #111827); border-radius: 14px; display: grid; grid-template-rows: auto minmax(0, 1fr) auto; overflow: hidden; box-shadow: 0 24px 70px rgba(0, 0, 0, .4); }
+.ie-head { display: flex; align-items: center; gap: 12px; padding: 12px 16px; border-bottom: 1px solid var(--line, #e5e7eb); }
+.ie-title { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.ie-info { margin-left: auto; font-size: 12px; color: var(--muted, #6b7280); white-space: nowrap; }
+.ie-x { border: 0; background: none; font-size: 26px; line-height: 1; cursor: pointer; color: inherit; }
+.ie-main { display: grid; grid-template-columns: minmax(0, 1fr) 280px; min-height: 0; }
+.ie-stage { position: relative; display: grid; place-items: center; min-height: 0; padding: 8px; background: #eef0f4; overflow: hidden; }
+.ie-cw { position: relative; background-image: linear-gradient(45deg, #d5d8de 25%, transparent 25%), linear-gradient(-45deg, #d5d8de 25%, transparent 25%), linear-gradient(45deg, transparent 75%, #d5d8de 75%), linear-gradient(-45deg, transparent 75%, #d5d8de 75%); background-size: 16px 16px; background-position: 0 0, 0 8px, 8px -8px, -8px 0; background-color: #fff; box-shadow: 0 2px 12px rgba(0, 0, 0, .18); overflow: hidden; touch-action: none; }
+.ie-cv { display: block; width: 100%; height: 100%; }
+.ie-crop { position: absolute; border: 2px solid #fff; box-shadow: 0 0 0 9999px rgba(0, 0, 0, .5); cursor: move; touch-action: none; }
+.ie-crop[hidden] { display: none; }
+.ie-crop i { position: absolute; width: 18px; height: 18px; background: #fff; border: 2px solid var(--brand, #4f46e5); border-radius: 50%; }
+.ie-crop i[data-h=nw] { left: -10px; top: -10px; cursor: nwse-resize; } .ie-crop i[data-h=ne] { right: -10px; top: -10px; cursor: nesw-resize; }
+.ie-crop i[data-h=sw] { left: -10px; bottom: -10px; cursor: nesw-resize; } .ie-crop i[data-h=se] { right: -10px; bottom: -10px; cursor: nwse-resize; }
+.ie-busy { position: absolute; inset: 0; display: grid; place-items: center; background: rgba(255, 255, 255, .8); font-weight: 700; text-align: center; padding: 20px; }
+.ie-busy[hidden] { display: none; }
+.ie-side { display: flex; flex-direction: column; gap: 10px; padding: 12px; border-left: 1px solid var(--line, #e5e7eb); overflow: auto; }
+.ie-tabs { display: grid; grid-template-columns: repeat(4, 1fr); gap: 4px; }
+.ie-tabs button { padding: 8px 2px; border: 1px solid var(--line, #e5e7eb); border-radius: 8px; background: transparent; cursor: pointer; font-size: 12.5px; font-weight: 700; color: inherit; }
+.ie-tabs button.on { background: var(--brand, #4f46e5); border-color: var(--brand, #4f46e5); color: #fff; }
+.ie-pane { display: grid; gap: 10px; align-content: start; font-size: 13px; }
+.ie-pane[hidden] { display: none; }
+.ie-pane label, .ie-out label { display: grid; gap: 4px; font-weight: 600; }
+.ie-pane hr { border: 0; border-top: 1px solid var(--line, #e5e7eb); width: 100%; margin: 2px 0; }
+.ie-pane select, .ie-out select { padding: 8px; border: 1px solid var(--line, #d1d5db); border-radius: 8px; background: var(--surface, #fff); color: inherit; font: inherit; }
+.ie-pane small, .ie-out small { color: var(--muted, #6b7280); font-size: 12px; }
+.ie-row { display: grid; grid-template-columns: 1fr 1fr; gap: 6px; }
+.ie-out { margin-top: auto; display: grid; gap: 6px; padding-top: 10px; border-top: 1px solid var(--line, #e5e7eb); }
+.ie-foot { display: flex; align-items: center; gap: 8px; padding: 10px 16px; border-top: 1px solid var(--line, #e5e7eb); flex-wrap: wrap; }
+.ie-sp { flex: 1; }
+.ie-btn { padding: 9px 14px; border: 1px solid var(--line, #d1d5db); border-radius: 9px; background: var(--surface, #fff); color: inherit; font: inherit; font-weight: 700; cursor: pointer; }
+.ie-btn:hover { background: var(--alt, #f3f4f6); }
+.ie-btn.pri { background: var(--brand, #4f46e5); border-color: var(--brand, #4f46e5); color: #fff; }
+.ie-note { display: block; margin-top: 4px; }
+@media (max-width: 760px) {
+  .ie-ov { padding: 0; }
+  .ie-box { height: 100%; border-radius: 0; }
+  .ie-main { grid-template-columns: 1fr; grid-template-rows: minmax(0, 1fr) auto; }
+  .ie-side { border-left: 0; border-top: 1px solid var(--line, #e5e7eb); max-height: 42vh; }
+}

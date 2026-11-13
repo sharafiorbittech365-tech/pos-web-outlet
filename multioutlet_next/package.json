@@ -1,0 +1,29 @@
+{
+  "name": "multioutlet-next",
+  "version": "1.0.0",
+  "private": true,
+  "description": "BizPilot360X multi-outlet website on Next.js — a port of apps/multistore (CodeIgniter 4). Talks only to the Multi-outlet API (apps/multioutlet_api).",
+  "scripts": {
+    "dev": "next dev -p 8089",
+    "build": "next build",
+    "start": "next start -p 8089",
+    "typecheck": "tsc --noEmit",
+    "test": "node --conditions=react-server --import tsx --test tests/*.test.ts"
+  },
+  "dependencies": {
+    "next": "^16.4.5",
+    "react": "^19.3.1",
+    "react-dom": "^19.3.1",
+    "server-only": "^0.0.1"
+  },
+  "devDependencies": {
+    "@types/node": "^24.0.0",
+    "@types/react": "^19.3.0",
+    "@types/react-dom": "^19.2.0",
+    "tsx": "^4.23.15",
+    "typescript": "^5.9.3"
+  },
+  "engines": {
+    "node": ">=20.9"
+  }
+}

@@ -1,0 +1,13 @@
+Health
+ [x] Is defined app path
+ [x] Base url has been set
+
+Multisite (Tests\Feature\Multisite)
+ [x] Credential rules
+ [x] Website off module off and suspended
+ [x] Gateway token with host
+ [x] Catalogue groups outlets with their own price and stock
+ [x] Filters
+ [x] Order goes into the chosen outlet only
+ [x] Order follows the outlets checkout settings
+

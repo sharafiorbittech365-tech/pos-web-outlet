@@ -1,0 +1,165 @@
+StartFontMetrics 4.1
+Notice Converted by PHP-font-lib
+Comment https://github.com/dompdf/php-font-lib
+EncodingScheme FontSpecific
+Copyright Copyright 2025 The Noto Project Authors (https://github.com/notofonts/bengali)
+FontName Noto Sans Bengali
+FontSubfamily Bold
+UniqueID 3.011;GOOG;NotoSansBengali-Bold
+FullName Noto Sans Bengali Bold
+Version Version 3.011; ttfautohint (v1.8.4.16-eb64)
+PostScriptName NotoSansBengali-Bold
+Trademark Noto is a trademark of Google Inc.
+Manufacturer Universal Thirst ehf.
+Designer Joana Ranito - Universal Thirst; Jelle Bosma - Monotype Design Team
+Description Designed by Universal Thirst
+FontVendorURL http://www.google.com/get/noto/
+FontDesignerURL https://universalthirst.com/
+LicenseDescription This Font Software is licensed under the SIL Open Font License, Version 1.1. This license is available with a FAQ at: https://openfontlicense.org
+LicenseURL https://openfontlicense.org/
+Weight Bold
+ItalicAngle 0
+IsFixedPitch false
+UnderlineThickness 50
+UnderlinePosition -100
+FontHeightOffset 0
+Ascender 917
+Descender -408
+FontBBox -644 -408 1275 917
+StartCharMetrics 418
+U 0 ; WX 0 ; N NULL ; G 1
+U 13 ; WX 260 ; N CR ; G 2
+U 32 ; WX 260 ; N space ; G 7
+U 33 ; WX 317 ; N exclam ; G 130
+U 63 ; WX 553 ; N question ; G 131
+U 91 ; WX 331 ; N bracketleft ; G 124
+U 93 ; WX 331 ; N bracketright ; G 125
+U 123 ; WX 394 ; N braceleft ; G 122
+U 125 ; WX 394 ; N braceright ; G 123
+U 160 ; WX 260 ; N nbspace ; G 8
+U 700 ; WX 341 ; N uni02BC ; G 413
+U 2385 ; WX 0 ; N uni0951 ; G 107
+U 2386 ; WX 0 ; N uni0952 ; G 108
+U 2404 ; WX 407 ; N danda-deva ; G 105
+U 2405 ; WX 650 ; N dbldanda-deva ; G 106
+U 2432 ; WX 588 ; N anji-beng ; G 9
+U 2433 ; WX 0 ; N candrabindu-beng ; G 10
+U 2434 ; WX 447 ; N anusvara-beng ; G 11
+U 2435 ; WX 447 ; N visarga-beng ; G 12
+U 2437 ; WX 921 ; N a-beng ; G 13
+U 2438 ; WX 1203 ; N aa-beng ; G 14
+U 2439 ; WX 553 ; N i-beng ; G 15
+U 2440 ; WX 682 ; N ii-beng ; G 16
+U 2441 ; WX 721 ; N u-beng ; G 17
+U 2442 ; WX 838 ; N uu-beng ; G 18
+U 2443 ; WX 902 ; N rVocalic-beng ; G 19
+U 2444 ; WX 655 ; N lVocalic-beng ; G 20
+U 2447 ; WX 737 ; N e-beng ; G 21
+U 2448 ; WX 904 ; N ai-beng ; G 22
+U 2451 ; WX 765 ; N o-beng ; G 23
+U 2452 ; WX 936 ; N au-beng ; G 24
+U 2453 ; WX 813 ; N ka-beng ; G 25
+U 2454 ; WX 711 ; N kha-beng ; G 26
+U 2455 ; WX 688 ; N ga-beng ; G 27
+U 2456 ; WX 625 ; N gha-beng ; G 28
+U 2457 ; WX 730 ; N nga-beng ; G 29
+U 2458 ; WX 555 ; N ca-beng ; G 30
+U 2459 ; WX 649 ; N cha-beng ; G 31
+U 2460 ; WX 904 ; N ja-beng ; G 32
+U 2461 ; WX 829 ; N jha-beng ; G 33
+U 2462 ; WX 1021 ; N nya-beng ; G 34
+U 2463 ; WX 559 ; N tta-beng ; G 35
+U 2464 ; WX 565 ; N ttha-beng ; G 36
+U 2465 ; WX 721 ; N dda-beng ; G 37
+U 2466 ; WX 559 ; N ddha-beng ; G 38
+U 2467 ; WX 656 ; N nna-beng ; G 39
+U 2468 ; WX 717 ; N ta-beng ; G 40
+U 2469 ; WX 699 ; N tha-beng ; G 41
+U 2470 ; WX 568 ; N da-beng ; G 42
+U 2471 ; WX 606 ; N dha-beng ; G 43
+U 2472 ; WX 622 ; N na-beng ; G 44
+U 2474 ; WX 740 ; N pa-beng ; G 45
+U 2475 ; WX 826 ; N pha-beng ; G 46
+U 2476 ; WX 602 ; N ba-beng ; G 47
+U 2477 ; WX 706 ; N bha-beng ; G 48
+U 2478 ; WX 622 ; N ma-beng ; G 49
+U 2479 ; WX 616 ; N ya-beng ; G 50
+U 2480 ; WX 602 ; N ra-beng ; G 51
+U 2482 ; WX 757 ; N la-beng ; G 52
+U 2486 ; WX 710 ; N sha-beng ; G 53
+U 2487 ; WX 616 ; N ssa-beng ; G 54
+U 2488 ; WX 644 ; N sa-beng ; G 55
+U 2489 ; WX 549 ; N ha-beng ; G 56
+U 2492 ; WX 0 ; N nukta-beng ; G 57
+U 2493 ; WX 547 ; N avagraha-beng ; G 58
+U 2494 ; WX 283 ; N aaMatra-beng ; G 59
+U 2495 ; WX 283 ; N iMatra-beng ; G 60
+U 2496 ; WX 283 ; N iiMatra-beng ; G 61
+U 2497 ; WX 0 ; N uMatra-beng ; G 62
+U 2498 ; WX 0 ; N uuMatra-beng ; G 63
+U 2499 ; WX 0 ; N rVocalicMatra-beng ; G 64
+U 2500 ; WX 0 ; N rrVocalicMatra-beng ; G 65
+U 2503 ; WX 400 ; N eMatra-beng ; G 66
+U 2504 ; WX 400 ; N aiMatra-beng ; G 67
+U 2507 ; WX 1192 ; N oMatra-beng ; G 68
+U 2508 ; WX 1192 ; N auMatra-beng ; G 69
+U 2509 ; WX 0 ; N halant-beng ; G 70
+U 2510 ; WX 585 ; N taKhanda-beng ; G 71
+U 2519 ; WX 283 ; N auLength-beng ; G 72
+U 2524 ; WX 721 ; N rra-beng ; G 73
+U 2525 ; WX 559 ; N rha-beng ; G 74
+U 2527 ; WX 616 ; N yya-beng ; G 75
+U 2528 ; WX 902 ; N rrVocalic-beng ; G 76
+U 2529 ; WX 772 ; N llVocalic-beng ; G 77
+U 2530 ; WX 0 ; N lVocalicMatra-beng ; G 78
+U 2531 ; WX 0 ; N llVocalicMatra-beng ; G 79
+U 2534 ; WX 609 ; N zero-beng ; G 80
+U 2535 ; WX 609 ; N one-beng ; G 81
+U 2536 ; WX 609 ; N two-beng ; G 82
+U 2537 ; WX 609 ; N three-beng ; G 83
+U 2538 ; WX 609 ; N four-beng ; G 84
+U 2539 ; WX 609 ; N five-beng ; G 85
+U 2540 ; WX 609 ; N six-beng ; G 86
+U 2541 ; WX 609 ; N seven-beng ; G 87
+U 2542 ; WX 609 ; N eight-beng ; G 88
+U 2543 ; WX 609 ; N nine-beng ; G 89
+U 2544 ; WX 595 ; N ramiddlediagonal-beng ; G 90
+U 2545 ; WX 595 ; N ralowerdiagonal-beng ; G 91
+U 2546 ; WX 610 ; N rupeeMark-beng ; G 92
+U 2547 ; WX 609 ; N rupeeSign-beng ; G 93
+U 2548 ; WX 610 ; N oneNumr-beng ; G 94
+U 2549 ; WX 663 ; N twoNumr-beng ; G 95
+U 2550 ; WX 748 ; N threeNumr-beng ; G 96
+U 2551 ; WX 305 ; N fourNumr-beng ; G 97
+U 2552 ; WX 646 ; N oneLessNumr-beng ; G 98
+U 2553 ; WX 495 ; N sixteenDnom-beng ; G 99
+U 2554 ; WX 703 ; N isshar-beng ; G 100
+U 2555 ; WX 339 ; N ganda-beng ; G 101
+U 2556 ; WX 583 ; N vedicAnusvara-beng ; G 102
+U 2557 ; WX 446 ; N abbreviation-beng ; G 103
+U 2558 ; WX 0 ; N sandhi-beng ; G 104
+U 7376 ; WX 0 ; N uni1CD0 ; G 109
+U 7378 ; WX 0 ; N uni1CD2 ; G 110
+U 7381 ; WX 0 ; N uni1CD5 ; G 111
+U 7382 ; WX 0 ; N uni1CD6 ; G 112
+U 7384 ; WX 0 ; N uni1CD8 ; G 113
+U 7393 ; WX 491 ; N uni1CE1 ; G 114
+U 7402 ; WX 796 ; N uni1CEA ; G 115
+U 7405 ; WX 0 ; N uni1CED ; G 116
+U 7410 ; WX 583 ; N uni1CF2 ; G 117
+U 7413 ; WX 551 ; N uni1CF5 ; G 118
+U 7414 ; WX 713 ; N uni1CF6 ; G 119
+U 7415 ; WX 491 ; N uni1CF7 ; G 120
+U 8203 ; WX 0 ; N uni200B ; G 5
+U 8204 ; WX 0 ; N zerowidthnonjoiner ; G 3
+U 8205 ; WX 0 ; N zerowidthjoiner ; G 4
+U 8208 ; WX 373 ; N uni2010 ; G 414
+U 8216 ; WX 217 ; N quoteleft ; G 128
+U 8217 ; WX 217 ; N quoteright ; G 129
+U 8220 ; WX 445 ; N quotedblleft ; G 126
+U 8221 ; WX 445 ; N quotedblright ; G 127
+U 8377 ; WX 623 ; N uni20B9 ; G 412
+U 9676 ; WX 510 ; N dottedCircle ; G 6
+U 43249 ; WX 0 ; N uniA8F1 ; G 121
+EndCharMetrics
+EndFontMetrics

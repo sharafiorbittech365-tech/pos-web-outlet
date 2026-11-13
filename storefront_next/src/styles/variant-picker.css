@@ -1,0 +1,6 @@
+/* Size x colour picker (product page) — reuses .opt / .ob chips from storefront.css */
+.vp { display: grid; gap: 14px; margin: 4px 0 2px; }
+.vp-dim .ob { cursor: pointer; }
+.vp-dim b span { color: var(--muted); font-weight: 500; }
+.vp-msg { min-height: 1.2em; display: block; }
+@media (max-width: 700px) { .vp-dim .ob { min-width: 44px; height: 40px; padding: 0 10px; } }

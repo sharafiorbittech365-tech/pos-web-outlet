@@ -1,0 +1,37 @@
+/* BizPilot360X back office — small additions on top of app.css for the server-rendered module pages. */
+[hidden] { display: none !important; }
+.range-custom { display: inline-flex; align-items: center; gap: 6px; margin: 0; }
+.range-custom .input.sm, .input.sm { height: 34px; padding: 0 8px; font-size: 13px; width: auto; }
+.bo-form .tabs { margin-bottom: 4px; }
+.bo-form .pane { display: grid; gap: 14px; }
+.bo-actions { display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: flex-end; padding-top: 6px; }
+.bo-actions .spacer { flex: 1; }
+.bo-rows { display: grid; gap: 8px; }
+.bo-row { display: grid; gap: 8px; align-items: end; grid-template-columns: repeat(var(--cols, 3), minmax(0, 1fr)) 40px; }
+.bo-row .x-btn, .bo-row .icon-btn { height: 40px; }
+.stypes .opt { cursor: pointer; }
+.stypes .opt input { position: absolute; opacity: 0; pointer-events: none; }
+.key-once { display: grid; gap: 8px; padding: 14px; border-radius: 12px; border: 1px dashed var(--warn, #F59E0B); background: var(--warn-soft, #FEF3C7); }
+.key-once code { font-size: 14px; word-break: break-all; user-select: all; }
+.inline-form { display: inline-flex; gap: 6px; align-items: center; margin: 0; }
+.mini-grid { display: grid; gap: 14px; grid-template-columns: repeat(auto-fit, minmax(280px, 1fr)); }
+.perm-matrix .perm input { margin-right: 6px; }
+.bo-note { font-size: 12.5px; }
+.bo-kv { display: grid; grid-template-columns: max-content 1fr; gap: 6px 14px; font-size: 13.5px; }
+.bo-kv dt { color: var(--muted); }
+.bo-kv dd { margin: 0; font-weight: 600; }
+.sn-list { display: flex; flex-wrap: wrap; gap: 6px; }
+.sn-list code { padding: 2px 6px; border-radius: 6px; background: var(--soft, rgba(100,116,139,.12)); font-size: 12px; }
+@media (max-width: 720px) {
+  .bo-row { grid-template-columns: 1fr 1fr 40px; }
+}
+@media print {
+  body.bo-print #app { display: block !important; }
+  body.bo-print .sidebar, body.bo-print .topbar, body.bo-print .sbanners, body.bo-print .page-h .btn, body.bo-print .page-h .chip,
+  body.bo-print .range-custom, body.bo-print .dt-bar, body.bo-print .dt-foot, body.bo-print .flash, body.bo-print .no-print { display: none !important; }
+  body.bo-print .main { margin: 0 !important; padding: 0 !important; }
+  body.bo-print .report-head { display: block !important; margin-bottom: 10px; }
+  body.bo-print .stats { display: grid; grid-template-columns: repeat(4, 1fr); gap: 6px; }
+  body.bo-print .stat, body.bo-print .card { border: 1px solid #ccc; break-inside: avoid; box-shadow: none; }
+  body.bo-print .reg-grid, body.bo-print .vat-grid { display: block; }
+}
